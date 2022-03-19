@@ -21,7 +21,6 @@ public class ShootProjectiles : MonoBehaviour
     void Start()
     {
         timeSinceShot = 0f;
-        DrawCirclePoints(numOfShootingPoints, 1.0, shooterObject.transform.position);
     }
 
     // Update is called once per frame
@@ -32,6 +31,8 @@ public class ShootProjectiles : MonoBehaviour
         if (timeSinceShot > shootingInterval)
         {
             timeSinceShot = 0f;
+            circleShooterPoints.Clear();
+            DrawCirclePoints(numOfShootingPoints, 1.0, shooterObject.transform.position, shooterObject.transform.rotation);
 
             /*
             for (int i = 0; i < shooterObjects.Length; i++)
@@ -44,17 +45,17 @@ public class ShootProjectiles : MonoBehaviour
             {
                 GameObject obj = Instantiate(projectileObject, circleShooterPoints[j], Quaternion.identity);
                 obj.GetComponent<Rigidbody2D>().velocity = circleShooterPoints[j] - projectileObject.transform.position * projectileSpeed;
-                Debug.Log(circleShooterPoints[j]);
             }
         }
     }
 
-    void DrawCirclePoints(int points, double radius, Vector3 center)
+    void DrawCirclePoints(int points, double radius, Vector3 center, Quaternion currentRotation)
     {
         double slice = 2 * Math.PI / points;
         for (int i = 0; i < points; i++)
         {
             double angle = slice * i;
+            angle += currentRotation.eulerAngles.z * (Math.PI / 180);
             float newX = (float)(center.x + radius * Math.Cos(angle));
             float newY = (float)(center.y + radius * Math.Sin(angle));
             circleShooterPoints.Add(new Vector3(newX, newY, 0f));
