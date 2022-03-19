@@ -119,3 +119,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f6e4129dbc839f4699c309a26aa1bf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flowerPattern: 1
+  projectileSpeed: 3

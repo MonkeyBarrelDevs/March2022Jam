@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class OutOfBoundsCheck : MonoBehaviour
 {
+    public bool flowerPattern;
+    public float projectileSpeed;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +20,14 @@ public class OutOfBoundsCheck : MonoBehaviour
 
     private void OnBecameInvisible()
     {
-        Destroy(gameObject);
+        if (flowerPattern)
+        {
+            gameObject.GetComponent<Rigidbody2D>().velocity = gameObject.transform.up * -1 * projectileSpeed;
+        }
+
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }
