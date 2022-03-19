@@ -121,3 +121,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flowerPattern: 1
   projectileSpeed: 3
+  shooterObject: {fileID: 7505664139048206412, guid: 3f194aa57a147ea49a3914a611299893, type: 3}
