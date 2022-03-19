@@ -29,6 +29,7 @@ public class OutOfBoundsCheck : MonoBehaviour
         if (flowerPattern)
         {
             gameObject.GetComponent<Rigidbody2D>().velocity = gameObject.transform.up * -1 * projectileSpeed;
+            gameObject.GetComponent<SpriteRenderer>().color = Color.red;
         }
 
         else
