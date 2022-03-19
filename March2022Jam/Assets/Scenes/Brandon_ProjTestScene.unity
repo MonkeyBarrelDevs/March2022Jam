@@ -178,6 +178,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shooterObject: {fileID: 947293355}
   speedOfRotation: 0.5
+  timeBetweenShakes: 1
+  shakeRotate: 1
 --- !u!1 &1108499443
 GameObject:
   m_ObjectHideFlags: 0
@@ -399,7 +401,7 @@ PrefabInstance:
     - target: {fileID: 5736193700569635681, guid: 3f194aa57a147ea49a3914a611299893, type: 3}
       propertyPath: shooterObject
       value: 
-      objectReference: {fileID: 1256841078}
+      objectReference: {fileID: 947293355}
     - target: {fileID: 5736193700569635681, guid: 3f194aa57a147ea49a3914a611299893, type: 3}
       propertyPath: projectileSpeed
       value: 3
@@ -411,6 +413,10 @@ PrefabInstance:
     - target: {fileID: 5736193700569635681, guid: 3f194aa57a147ea49a3914a611299893, type: 3}
       propertyPath: shootingInterval
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5736193700569635681, guid: 3f194aa57a147ea49a3914a611299893, type: 3}
+      propertyPath: numOfShootingPoints
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5736193700569635681, guid: 3f194aa57a147ea49a3914a611299893, type: 3}
       propertyPath: shooterObjects.Array.size
