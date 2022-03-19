@@ -177,6 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shooterObject: {fileID: 947293355}
+  speedOfRotation: 0.5
 --- !u!1 &1108499443
 GameObject:
   m_ObjectHideFlags: 0
