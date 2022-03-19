@@ -7,9 +7,15 @@ public class LevelLoader : MonoBehaviour
 {
     [SerializeField] Animator transition;
     [SerializeField] float transitionTime = .5f;
-
+    [SerializeField] bool autoTransition = true;
+    [SerializeField] float autoTransDelay = 0f;
+    [SerializeField] string autoTransTargetScene = "SampleScene";
     private void Start()
     {
+        if (autoTransition) 
+        {
+            StartCoroutine(Delay(autoTransTargetScene, autoTransDelay));
+        }
     }
 
     public void LoadNextLevel()
@@ -61,9 +67,9 @@ public class LevelLoader : MonoBehaviour
 
     }
 
-    IEnumerator Delay(float delay)
+    IEnumerator Delay(string name, float delay)
     {
         yield return new WaitForSeconds(delay);
-        LoadNextLevel();
+        LoadLevelWithName(name);
     }
 }
