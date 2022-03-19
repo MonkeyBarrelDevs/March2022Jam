@@ -7,8 +7,8 @@ public class BossController : MonoBehaviour
 {
 protected RandomDestinationSetter moveRandomly;
 protected AIDestinationSetter moveTowardsPlayer;
-protected bool isMovingRandomly = false;
-protected bool isChasingPlayer = true;
+public bool isMovingRandomly = false;
+public bool isChasingPlayer = true;
 
     // Start is called before the first frame update
     void Start()

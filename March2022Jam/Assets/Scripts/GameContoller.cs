@@ -26,6 +26,7 @@ public class GameContoller : MonoBehaviour
 
     public void Unpause()
     {   
+        Debug.Log("Hello");
         pauseMenu.SetActive(false);
         SetMouseState(false);
         Time.timeScale = 1f;
