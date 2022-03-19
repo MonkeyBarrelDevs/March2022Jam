@@ -20,7 +20,6 @@ public class GameContoller : MonoBehaviour
     public void Pause()
     {
         pauseMenu.SetActive(true);
-        Debug.Log("HELLO");
         SetMouseState(true);
         Time.timeScale = 0f;
     }
@@ -28,7 +27,6 @@ public class GameContoller : MonoBehaviour
     public void Unpause()
     {   
         pauseMenu.SetActive(false);
-        Debug.Log("Hi"); 
         SetMouseState(false);
         Time.timeScale = 1f;
     }
