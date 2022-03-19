@@ -26,7 +26,7 @@ public class GameContoller : MonoBehaviour
         Time.timeScale = 1f;
     }
 
-    public void transitionToScene(int seconds, string sceneName)
+    public void TransitionAfter(int seconds, string sceneName)
     {
         StartCoroutine(Wait(seconds));
         //Transition to next scene using SceneManager and sceneName
@@ -47,7 +47,7 @@ public class GameContoller : MonoBehaviour
     void Start()
     {
         //Replace 0 and "Temp" with the length of the first song and the scene name.
-        transitionToScene(0, "Temp");
+        TransitionAfter(0, "Temp");
     }
 
     // Update is called once per frame
