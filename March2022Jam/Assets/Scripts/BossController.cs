@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 public class BossController : MonoBehaviour
 {
 protected RandomDestinationSetter moveRandomly;
-protected bool isMovingRandomly = true;
-protected bool isChasingPlayer = false;
+protected AIDestinationSetter moveTowardsPlayer;
+protected bool isMovingRandomly = false;
+protected bool isChasingPlayer = true;
 
     // Start is called before the first frame update
     void Start()
@@ -19,12 +21,12 @@ protected bool isChasingPlayer = false;
         if(isMovingRandomly)
         {
             moveRandomly.enabled = true;
-            //set chase.enabled = false;
+            moveTowardsPlayer.enabled = false;
         }
         else if(isChasingPlayer)
         {
+            moveTowardsPlayer.enabled = true;
             moveRandomly.enabled = false;
-            //set chase.enable = true;
         }
 
     }
@@ -38,5 +40,6 @@ protected bool isChasingPlayer = false;
     void FindReferences()
     {
         moveRandomly = gameObject.GetComponent<RandomDestinationSetter>();
+        moveTowardsPlayer = gameObject.GetComponent<AIDestinationSetter>();
     }
 }
