@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class GameContoller : MonoBehaviour
 {
-    private int HP;
+    [SerializeField] GameObject pauseMenu;
+    private int HP = 1;
     
     public void SetHP(int number)
     {
@@ -18,18 +19,18 @@ public class GameContoller : MonoBehaviour
 
     public void Pause()
     {
+        pauseMenu.SetActive(true);
+        Debug.Log("HELLO");
+        SetMouseState(true);
         Time.timeScale = 0f;
     }
 
     public void Unpause()
-    {
+    {   
+        pauseMenu.SetActive(false);
+        Debug.Log("Hi"); 
+        SetMouseState(false);
         Time.timeScale = 1f;
-    }
-
-    public void TransitionAfter(int seconds, string sceneName)
-    {
-        StartCoroutine(Wait(seconds));
-        //Transition to next scene using SceneManager and sceneName
     }
 
     IEnumerator Wait(int seconds)
@@ -47,7 +48,6 @@ public class GameContoller : MonoBehaviour
     void Start()
     {
         //Replace 0 and "Temp" with the length of the first song and the scene name.
-        TransitionAfter(0, "Temp");
     }
 
     // Update is called once per frame
@@ -55,5 +55,23 @@ public class GameContoller : MonoBehaviour
     {
         if(HP == 0)
             Lose();
+
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            Pause();
+        }          
+    }
+
+    public void SetMouseState(bool state) 
+    {
+        if (state)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
     }
 }
