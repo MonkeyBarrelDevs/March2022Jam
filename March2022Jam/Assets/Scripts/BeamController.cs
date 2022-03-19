@@ -5,7 +5,8 @@ using UnityEngine;
 public class BeamController : MonoBehaviour
 {
     public Transform playerTransform;
-    public bool trigger = false;
+    public bool triggerBeam = false;
+    public bool triggerOrbitals = false;
     public Animator bossAnimator;
     // Start is called before the first frame update
     void Start()
@@ -16,23 +17,22 @@ public class BeamController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (trigger == true)
+        if (triggerBeam == true)
         {
             BeamAttack();
-            trigger = false;
+            triggerBeam = false;
+        }
+        if (triggerOrbitals == true)
+        {
+            bossAnimator.SetTrigger("BeamAttackActivate");
+            triggerOrbitals = false;
         }
     }
 
     public void BeamAttack()
     {
-        //activate indicators
         Target();
         bossAnimator.SetTrigger("BeamAttackActivate");
-        //pause and wait
-        //change indicator to actual beam
-        //activate hitboxes
-        //
-        //deactivae hitboxes
     }
 
     private void Target()
