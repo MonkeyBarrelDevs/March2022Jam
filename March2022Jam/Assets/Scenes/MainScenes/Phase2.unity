@@ -178,6 +178,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8775904778697320985, guid: d84c4f75000f2834b800d28e9387c049, type: 3}
+      propertyPath: autoTransDelay
+      value: 154
+      objectReference: {fileID: 0}
+    - target: {fileID: 8775904778697320985, guid: d84c4f75000f2834b800d28e9387c049, type: 3}
+      propertyPath: autoTransTargetScene
+      value: Phase3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d84c4f75000f2834b800d28e9387c049, type: 3}
 --- !u!1001 &1865510484

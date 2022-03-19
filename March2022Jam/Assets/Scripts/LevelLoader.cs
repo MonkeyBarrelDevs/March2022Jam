@@ -10,6 +10,7 @@ public class LevelLoader : MonoBehaviour
     [SerializeField] bool autoTransition = true;
     [SerializeField] float autoTransDelay = 0f;
     [SerializeField] string autoTransTargetScene = "SampleScene";
+
     private void Start()
     {
         if (autoTransition) 
