@@ -225,6 +225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 1916289141}
   trigger: 0
+  bossAnimator: {fileID: 230135604}
 --- !u!95 &230135604
 Animator:
   serializedVersion: 4
