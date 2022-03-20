@@ -258,10 +258,10 @@ RectTransform:
   m_Father: {fileID: 63330322}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1440, y: 1440}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &166820779
 MonoBehaviour:
@@ -474,11 +474,11 @@ RectTransform:
   m_Father: {fileID: 63330322}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -500}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 160}
   m_SizeDelta: {x: 470, y: 120}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &957677400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -715,6 +715,14 @@ PrefabInstance:
     - target: {fileID: 5487922596453304659, guid: 309ce037421e62b48937e56777f7085a, type: 3}
       propertyPath: m_Name
       value: PP_Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487922596453304750, guid: 309ce037421e62b48937e56777f7085a, type: 3}
+      propertyPath: m_RefResolutionX
+      value: 1440
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487922596453304750, guid: 309ce037421e62b48937e56777f7085a, type: 3}
+      propertyPath: m_RefResolutionY
+      value: 1440
       objectReference: {fileID: 0}
     - target: {fileID: 5487922596453304751, guid: 309ce037421e62b48937e56777f7085a, type: 3}
       propertyPath: m_RootOrder

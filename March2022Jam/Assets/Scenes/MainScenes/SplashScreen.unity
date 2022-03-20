@@ -143,6 +143,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PP_Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 5487922596453304750, guid: 309ce037421e62b48937e56777f7085a, type: 3}
+      propertyPath: m_CropFrame
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487922596453304750, guid: 309ce037421e62b48937e56777f7085a, type: 3}
+      propertyPath: m_RefResolutionX
+      value: 1440
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487922596453304750, guid: 309ce037421e62b48937e56777f7085a, type: 3}
+      propertyPath: m_RefResolutionY
+      value: 1440
+      objectReference: {fileID: 0}
     - target: {fileID: 5487922596453304751, guid: 309ce037421e62b48937e56777f7085a, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -165,15 +177,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5487922596453304751, guid: 309ce037421e62b48937e56777f7085a, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5487922596453304751, guid: 309ce037421e62b48937e56777f7085a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5487922596453304751, guid: 309ce037421e62b48937e56777f7085a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5487922596453304751, guid: 309ce037421e62b48937e56777f7085a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -372,7 +384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 0
+  m_ReferencePixelsPerUnit: 64
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
@@ -452,7 +464,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1534575874}
   m_RootOrder: 0
@@ -504,6 +516,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5039938019871693968, guid: d84c4f75000f2834b800d28e9387c049, type: 3}
+      propertyPath: m_ReferencePixelsPerUnit
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 5039938021369142084, guid: d84c4f75000f2834b800d28e9387c049, type: 3}
       propertyPath: m_Name
       value: Level Loader

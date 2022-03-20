@@ -38,7 +38,7 @@ public class GameContoller : MonoBehaviour
         }
     }
 
-    public void Pause()
+    /*public void Pause()
     {
         pauseMenu.SetActive(true);
         SetMouseState(true);
@@ -50,7 +50,7 @@ public class GameContoller : MonoBehaviour
         pauseMenu.SetActive(false);
         SetMouseState(false);
         Time.timeScale = 1f;
-    }
+    }*/
 
     public void Lose()
     {
@@ -81,9 +81,9 @@ public class GameContoller : MonoBehaviour
         if (iFrameTime > 0)
             iFrameTime -= Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.Escape)) {
+        /*if (Input.GetKeyDown(KeyCode.Escape)) {
             Pause();
-        }
+        }*/
 
         if(HP == 2)
         {
