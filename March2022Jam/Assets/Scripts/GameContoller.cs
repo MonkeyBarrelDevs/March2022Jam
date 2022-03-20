@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class GameContoller : MonoBehaviour
 {
+    [SerializeField] bool transitionByMusic;
+    [SerializeField] float musicLength;
     [SerializeField] GameObject pauseMenu;
     [SerializeField] LevelLoader loader;
     [SerializeField] float respawnDelay = .5f;
     [SerializeField] float invulerabilityTime = .3f;
-    [SerializeField] Animator playerAnim;
-    private float iFrameTime = 0f;
-    private int HP = 1;
+    [SerializeField] PlayerMovement player;
+    [SerializeField] BossController boss;
+    [SerializeField] int HP = 3;
+    private float iFrameTime = -.01f;
     
     public void SetHP(int number)
     {
@@ -19,9 +22,10 @@ public class GameContoller : MonoBehaviour
 
     public void SubtractHP(int number)
     {
+        Debug.Log("Ouch");
         if (iFrameTime <= 0)
         {
-            HP = HP - number;
+            HP -= number;
             iFrameTime = invulerabilityTime;
         }
     }
@@ -42,7 +46,7 @@ public class GameContoller : MonoBehaviour
 
     public void Lose()
     {
-        playerAnim.SetTrigger("Die");
+        player.Die();
         loader.DelayLoadLevelWithName(loader.getSceneName(), respawnDelay);
     }
 
@@ -50,6 +54,7 @@ public class GameContoller : MonoBehaviour
     void Start()
     {
         //Replace 0 and "Temp" with the length of the first song and the scene name.
+        loader = FindObjectOfType<LevelLoader>();
     }
 
     // Update is called once per frame
@@ -58,7 +63,7 @@ public class GameContoller : MonoBehaviour
         if(HP <= 0)
             Lose();
 
-        if (iFrameTime >= 0)
+        if (iFrameTime > 0)
             iFrameTime -= Time.deltaTime;
 
         if (Input.GetKeyDown(KeyCode.Escape)) {
@@ -78,5 +83,16 @@ public class GameContoller : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
+    }
+
+    public void GoToNextPhase() 
+    {
+        loader.LoadNextLevel();
+    }
+
+    IEnumerator StaggerAfterSong(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        boss.Stagger();
     }
 }
