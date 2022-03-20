@@ -22,13 +22,11 @@ public class AttackSelection : MonoBehaviour
     public int ChooseAttack()
     {
         int attackIndex = PickAttack();
-        while ((orbitalsOut && attackIndex == 1) || (trackerOut && attackIndex == 4)){
+        while (orbitalsOut && attackIndex == 1){
             attackIndex = PickAttack();
         }
         if (attackIndex == 1)
             orbitalsOut = true;
-        if (attackIndex == 4)
-            trackerOut = true;
         Debug.Log("Attack " + attackIndex.ToString());
         return attackIndex;
     }

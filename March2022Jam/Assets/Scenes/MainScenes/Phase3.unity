@@ -590,7 +590,7 @@ MonoBehaviour:
   orbitalAnim: {fileID: 4966210181172644434}
   beamAnim: {fileID: 4371589210697428219}
   sweepAnim: {fileID: 4242954284726860761}
-  trackerAttackObject: {fileID: 0}
+  trackerAttackObject: {fileID: 686615401520648742, guid: 2fe5c8bcdd6a5064b9583437d5f9333c, type: 3}
 --- !u!58 &3090083869867742053
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -606,7 +606,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.5
+  m_Radius: 1
 --- !u!114 &3090083869867742058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1073,6 +1073,7 @@ GameObject:
   - component: {fileID: 4371589211198541655}
   - component: {fileID: 4371589211198541653}
   - component: {fileID: 4371589211198541654}
+  - component: {fileID: 4371589211198541656}
   m_Layer: 0
   m_Name: Beam1
   m_TagString: Untagged
@@ -1173,6 +1174,19 @@ Transform:
   m_Father: {fileID: 4371589211153328571}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4371589211198541656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4371589211198541648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58f53f3b2d8647e47800aae6f2e3bedf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameController: {fileID: 0}
 --- !u!4 &4371589211359765074
 Transform:
   m_ObjectHideFlags: 0
@@ -1257,6 +1271,7 @@ GameObject:
   - component: {fileID: 4371589211416498985}
   - component: {fileID: 4371589211416498991}
   - component: {fileID: 4371589211416498984}
+  - component: {fileID: 4371589211416498992}
   m_Layer: 0
   m_Name: Beam2
   m_TagString: Untagged
@@ -1316,6 +1331,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4371589211416498992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4371589211416498986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58f53f3b2d8647e47800aae6f2e3bedf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameController: {fileID: 0}
 --- !u!1 &4966210181172644432
 GameObject:
   m_ObjectHideFlags: 0
@@ -1383,6 +1411,7 @@ GameObject:
   - component: {fileID: 4966210182098388371}
   - component: {fileID: 4966210182098388370}
   - component: {fileID: 4966210182098388373}
+  - component: {fileID: 4966210182098388374}
   m_Layer: 0
   m_Name: Orbital4
   m_TagString: Untagged
@@ -1431,7 +1460,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bd0dbc2084b0b974bb7443787dfe050a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1472,7 +1501,20 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1
+--- !u!114 &4966210182098388374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4966210182098388368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58f53f3b2d8647e47800aae6f2e3bedf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameController: {fileID: 0}
 --- !u!4 &4966210182898822950
 Transform:
   m_ObjectHideFlags: 0
@@ -1499,6 +1541,7 @@ GameObject:
   - component: {fileID: 4966210182898822950}
   - component: {fileID: 4966210182898822969}
   - component: {fileID: 4966210182898822968}
+  - component: {fileID: 4966210182898822970}
   m_Layer: 0
   m_Name: Orbital2
   m_TagString: Untagged
@@ -1521,7 +1564,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1
 --- !u!212 &4966210182898822969
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1563,7 +1606,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bd0dbc2084b0b974bb7443787dfe050a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1574,6 +1617,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4966210182898822970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4966210182898822951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58f53f3b2d8647e47800aae6f2e3bedf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameController: {fileID: 0}
 --- !u!1 &4966210182940658706
 GameObject:
   m_ObjectHideFlags: 0
@@ -1585,6 +1641,7 @@ GameObject:
   - component: {fileID: 4966210182940658709}
   - component: {fileID: 4966210182940658708}
   - component: {fileID: 4966210182940658711}
+  - component: {fileID: 4966210182940658712}
   m_Layer: 0
   m_Name: Orbital3
   m_TagString: Untagged
@@ -1633,7 +1690,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bd0dbc2084b0b974bb7443787dfe050a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1674,7 +1731,20 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1
+--- !u!114 &4966210182940658712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4966210182940658706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58f53f3b2d8647e47800aae6f2e3bedf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameController: {fileID: 0}
 --- !u!4 &4966210183290425508
 Transform:
   m_ObjectHideFlags: 0
@@ -1701,6 +1771,7 @@ GameObject:
   - component: {fileID: 4966210183290425508}
   - component: {fileID: 4966210183290425511}
   - component: {fileID: 4966210183290425510}
+  - component: {fileID: 4966210183290425512}
   m_Layer: 0
   m_Name: Orbital1
   m_TagString: Untagged
@@ -1723,7 +1794,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1
 --- !u!212 &4966210183290425511
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1765,7 +1836,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bd0dbc2084b0b974bb7443787dfe050a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1776,6 +1847,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4966210183290425512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4966210183290425509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58f53f3b2d8647e47800aae6f2e3bedf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameController: {fileID: 0}
 --- !u!114 &8514712008328646921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1861,7 +1945,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 6c0f4f090c3e2df45a7d7c9b4ac0da28, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f3155e441d6d5d5439207acc32863a73, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
