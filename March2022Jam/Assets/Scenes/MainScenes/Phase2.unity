@@ -679,6 +679,7 @@ MonoBehaviour:
   - 5
   - 3
   - 3
+  - 2
   delayTimer: 3
   isMovingRandomly: 1
   isChasingPlayer: 0
@@ -2206,7 +2207,7 @@ Animator:
   m_GameObject: {fileID: 5929550135406883097}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 398cc2e18b80c5741907b7a549f4a9e1, type: 2}
+  m_Controller: {fileID: 9100000, guid: 957c92621f342504daf98870fb9addab, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
