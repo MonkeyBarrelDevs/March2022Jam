@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AttackDamageHandler : MonoBehaviour
 {
-    [SerializeField] GameContoller gameController;
+    GameContoller gameController;
     private void Start()
     {
         gameController = FindObjectOfType<GameContoller>();
