@@ -362,6 +362,7 @@ GameObject:
   m_Component:
   - component: {fileID: 553359350}
   - component: {fileID: 553359349}
+  - component: {fileID: 553359351}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -405,6 +406,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &553359351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553359348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7460a5aa70a711a48ac1ec5efc4110ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Hurt
+    clip: {fileID: 8300000, guid: 31abc3930240f454b8e173c1e5a29ff1, type: 3}
+    volume: 1
+    pitch: 1
+    SpatialBlend: 0
+    MaxDistance: 0
+    loop: 0
+    source: {fileID: 0}
 --- !u!1 &573777507 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3592959162641870492, guid: 81df75eb5ad78e94a86f84c8e2652119, type: 3}
