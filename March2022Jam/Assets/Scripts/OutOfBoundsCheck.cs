@@ -22,19 +22,23 @@ public class OutOfBoundsCheck : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
 
+        double bulletX = gameObject.transform.position.x;
+        double bulletY = gameObject.transform.position.y;
+        double circleRadius = 17.0;
+
+        if (Math.Pow(bulletX, 2) + Math.Pow(bulletY, 2) - Math.Pow(circleRadius, 2) > 0)
+        {
+            Destroy(gameObject);
+        }
+
+    }
     private void OnBecameInvisible()
     {
         if (flowerPattern)
         {
             gameObject.GetComponent<Rigidbody2D>().velocity = gameObject.transform.up * -1 * projectileSpeed;
             gameObject.GetComponent<SpriteRenderer>().color = Color.red;
-        }
-
-        else
-        {
-            Destroy(gameObject);
         }
     }
 }
