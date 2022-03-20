@@ -35,6 +35,7 @@ public class AttackSelection : MonoBehaviour
 
     private int PickAttack()
     {
+        Debug.Log(battlePhase);
         switch (battlePhase)
         {
             case 1:
