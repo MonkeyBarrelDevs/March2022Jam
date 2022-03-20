@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: LaserProjFlux
+  m_Name: BeamCharge
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,11 +20,11 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 1258023548, guid: c6b13a81609652c408300309ce01650d, type: 3}
+      value: {fileID: -1964577578, guid: 506b12bf9fb4e524eb77902d7febb62d, type: 3}
     - time: 0.06666667
-      value: {fileID: 2122274151, guid: c6b13a81609652c408300309ce01650d, type: 3}
+      value: {fileID: 1906430758, guid: 506b12bf9fb4e524eb77902d7febb62d, type: 3}
     - time: 0.13333334
-      value: {fileID: 1258023548, guid: c6b13a81609652c408300309ce01650d, type: 3}
+      value: {fileID: -1964577578, guid: 506b12bf9fb4e524eb77902d7febb62d, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -44,9 +44,9 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 1258023548, guid: c6b13a81609652c408300309ce01650d, type: 3}
-    - {fileID: 2122274151, guid: c6b13a81609652c408300309ce01650d, type: 3}
-    - {fileID: 1258023548, guid: c6b13a81609652c408300309ce01650d, type: 3}
+    - {fileID: -1964577578, guid: 506b12bf9fb4e524eb77902d7febb62d, type: 3}
+    - {fileID: 1906430758, guid: 506b12bf9fb4e524eb77902d7febb62d, type: 3}
+    - {fileID: -1964577578, guid: 506b12bf9fb4e524eb77902d7febb62d, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
