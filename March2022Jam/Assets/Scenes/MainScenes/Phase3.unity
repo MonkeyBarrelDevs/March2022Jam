@@ -383,6 +383,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55a43f69866d4af47bc108c9db53ce3d, type: 3}
+--- !u!212 &401024904 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3592959161638923349, guid: 81df75eb5ad78e94a86f84c8e2652119, type: 3}
+  m_PrefabInstance: {fileID: 1862942345}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &587805649
 GameObject:
   m_ObjectHideFlags: 0
@@ -1022,7 +1027,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3592959162641870464, guid: 81df75eb5ad78e94a86f84c8e2652119, type: 3}
   m_PrefabInstance: {fileID: 1862942345}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1955904065}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a57291f7109502c429bba69458cd6f2d, type: 3}
@@ -1381,8 +1386,49 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 9076378140012291302, guid: 81df75eb5ad78e94a86f84c8e2652119, type: 3}
+      propertyPath: orthographic size
+      value: 11.25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81df75eb5ad78e94a86f84c8e2652119, type: 3}
+--- !u!1 &1955904065 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3592959162641870492, guid: 81df75eb5ad78e94a86f84c8e2652119, type: 3}
+  m_PrefabInstance: {fileID: 1862942345}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1955904067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1955904065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8edf2d55ca588547881b7472e926510, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TrailName: 
+  m_CurrentTrailPreset: {fileID: 11400000, guid: d968958ed89df2d4ea068fe4a5a29077, type: 2}
+  m_TrailParent: {fileID: 0}
+  m_SpriteToDuplicate: {fileID: 401024904}
+  m_Layer: 0
+  m_ZMoveStep: 0.0001
+  m_ZMoveMax: 0.9999
+  m_HideTrailOnDisabled: 1
+  m_TrailActivationCondition: 0
+  m_TrailDeactivationCondition: 0
+  m_StartIfUnderVelocity: 0
+  m_VelocityStartIsLocalSpace: 0
+  m_VelocityNeededToStart: 0
+  m_StopIfOverVelocity: 0
+  m_VelocityStopIsLocalSpace: 0
+  m_VelocityNeededToStop: 0
+  m_TrailActivationDuration: 0
+  m_SortingLayerID: 0
+  m_OrderInSortingLayer: 0
+  m_DisabledElementsInTrail: []
 --- !u!4 &1974166101 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7508285693759244620, guid: a55976aab26fa514d81f8846b8aae11c, type: 3}
@@ -1811,6 +1857,12 @@ MonoBehaviour:
   player: {fileID: 1065111647}
   boss: {fileID: 3090083869867742062}
   HP: 3
+  Heart1Filled: {fileID: 0}
+  Heart2Filled: {fileID: 0}
+  Heart3Filled: {fileID: 0}
+  Heart1Unfilled: {fileID: 0}
+  Heart2Unfilled: {fileID: 0}
+  Heart3Unfilled: {fileID: 0}
 --- !u!4 &4242954284726860760
 Transform:
   m_ObjectHideFlags: 0
@@ -2494,6 +2546,7 @@ GameObject:
   - component: {fileID: 8695272783607163746}
   - component: {fileID: 8695272783607163750}
   - component: {fileID: 8695272783607163751}
+  - component: {fileID: 8695272783607163752}
   m_Layer: 0
   m_Name: Phase3Boss
   m_TagString: Untagged
@@ -2669,3 +2722,35 @@ MonoBehaviour:
     MaxDistance: 0
     loop: 0
     source: {fileID: 0}
+--- !u!114 &8695272783607163752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8695272783607163744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8edf2d55ca588547881b7472e926510, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TrailName: 
+  m_CurrentTrailPreset: {fileID: 11400000, guid: 8e9e94c64107e134fa7a2c350bf038e5, type: 2}
+  m_TrailParent: {fileID: 0}
+  m_SpriteToDuplicate: {fileID: 8695272782049400103}
+  m_Layer: 0
+  m_ZMoveStep: 0.0001
+  m_ZMoveMax: 0.9999
+  m_HideTrailOnDisabled: 1
+  m_TrailActivationCondition: 0
+  m_TrailDeactivationCondition: 0
+  m_StartIfUnderVelocity: 0
+  m_VelocityStartIsLocalSpace: 0
+  m_VelocityNeededToStart: 0
+  m_StopIfOverVelocity: 0
+  m_VelocityStopIsLocalSpace: 0
+  m_VelocityNeededToStop: 0
+  m_TrailActivationDuration: 0
+  m_SortingLayerID: 0
+  m_OrderInSortingLayer: 0
+  m_DisabledElementsInTrail: []

@@ -337,6 +337,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 265185812}
   m_CullTransparentMesh: 1
+--- !u!1 &305371574 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3592959162641870492, guid: 81df75eb5ad78e94a86f84c8e2652119, type: 3}
+  m_PrefabInstance: {fileID: 842198251}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &318979242
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,6 +481,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &527234531 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3592959161638923349, guid: 81df75eb5ad78e94a86f84c8e2652119, type: 3}
+  m_PrefabInstance: {fileID: 842198251}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &537556779
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2448,7 +2458,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3592959162641870464, guid: 81df75eb5ad78e94a86f84c8e2652119, type: 3}
   m_PrefabInstance: {fileID: 842198251}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 305371574}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a57291f7109502c429bba69458cd6f2d, type: 3}
@@ -2459,6 +2469,38 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3592959162641870493, guid: 81df75eb5ad78e94a86f84c8e2652119, type: 3}
   m_PrefabInstance: {fileID: 842198251}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3592959161873334906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 305371574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8edf2d55ca588547881b7472e926510, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TrailName: 
+  m_CurrentTrailPreset: {fileID: 11400000, guid: d968958ed89df2d4ea068fe4a5a29077, type: 2}
+  m_TrailParent: {fileID: 0}
+  m_SpriteToDuplicate: {fileID: 527234531}
+  m_Layer: 0
+  m_ZMoveStep: 0.0001
+  m_ZMoveMax: 0.9999
+  m_HideTrailOnDisabled: 1
+  m_TrailActivationCondition: 0
+  m_TrailDeactivationCondition: 0
+  m_StartIfUnderVelocity: 0
+  m_VelocityStartIsLocalSpace: 0
+  m_VelocityNeededToStart: 0
+  m_StopIfOverVelocity: 0
+  m_VelocityStopIsLocalSpace: 0
+  m_VelocityNeededToStop: 0
+  m_TrailActivationDuration: 0
+  m_SortingLayerID: 0
+  m_OrderInSortingLayer: 0
+  m_DisabledElementsInTrail: []
 --- !u!1001 &5670828859620011822
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2542,6 +2584,7 @@ GameObject:
   - component: {fileID: 5929550135406883099}
   - component: {fileID: 5929550135406883101}
   - component: {fileID: 5929550135406883102}
+  - component: {fileID: 5929550135406883103}
   m_Layer: 0
   m_Name: Phase1Boss
   m_TagString: Untagged
@@ -2676,6 +2719,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36a0b2c04a562ae48a523b275ae31294, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5929550135406883103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5929550135406883097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8edf2d55ca588547881b7472e926510, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TrailName: 
+  m_CurrentTrailPreset: {fileID: 11400000, guid: 591a7ddd9dbd736439251415ade5a4b9, type: 2}
+  m_TrailParent: {fileID: 5929550135406883098}
+  m_SpriteToDuplicate: {fileID: 5929550137002053470}
+  m_Layer: 0
+  m_ZMoveStep: 0.0001
+  m_ZMoveMax: 0.9999
+  m_HideTrailOnDisabled: 1
+  m_TrailActivationCondition: 0
+  m_TrailDeactivationCondition: 0
+  m_StartIfUnderVelocity: 0
+  m_VelocityStartIsLocalSpace: 0
+  m_VelocityNeededToStart: 0
+  m_StopIfOverVelocity: 0
+  m_VelocityStopIsLocalSpace: 0
+  m_VelocityNeededToStop: 0
+  m_TrailActivationDuration: 0
+  m_SortingLayerID: 0
+  m_OrderInSortingLayer: 0
+  m_DisabledElementsInTrail: []
 --- !u!1 &5929550137002053468
 GameObject:
   m_ObjectHideFlags: 0
