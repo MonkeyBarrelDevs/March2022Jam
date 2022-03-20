@@ -16,9 +16,9 @@ public class BossController : MonoBehaviour
     public bool isChasingPlayer = false;
     public cameraShake cameraShake;
     [SerializeField]
-    [Range(0, 1)]
+    [Range(0, 50)]
     public float duration = 0.15f;
-    [Range(0,1)]
+    [Range(0,50)]
     public float magnitude = 0.4f;
 
     // Start is called before the first frame update
@@ -71,6 +71,7 @@ public class BossController : MonoBehaviour
         moveTowardsPlayer = gameObject.GetComponent<AIDestinationSetter>();
         selector = GetComponent<AttackSelection>();
         bossAnim = GetComponent<Animator>();
+
     }
 
     public void SetChasing() 
