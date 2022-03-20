@@ -15,6 +15,13 @@ public class GameContoller : MonoBehaviour
     [SerializeField] int HP = 3;
     private float iFrameTime = -.01f;
     AudioManager audioManager;
+    [SerializeField] GameObject Heart1Filled;
+    [SerializeField] GameObject Heart2Filled;
+    [SerializeField] GameObject Heart3Filled;
+    [SerializeField] GameObject Heart1Unfilled;
+    [SerializeField] GameObject Heart2Unfilled;
+    [SerializeField] GameObject Heart3Unfilled;
+
 
     public void SetHP(int number)
     {
@@ -59,6 +66,10 @@ public class GameContoller : MonoBehaviour
         loader = FindObjectOfType<LevelLoader>();
         if(transitionByMusic)
             StartCoroutine(StaggerAfterSong(musicLength));
+
+        Heart1Unfilled.SetActive(false);
+        Heart2Unfilled.SetActive(false);
+        Heart3Unfilled.SetActive(false);
     }
 
     // Update is called once per frame
@@ -72,6 +83,22 @@ public class GameContoller : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape)) {
             Pause();
+        }
+
+        if(HP == 2)
+        {
+            Heart3Filled.SetActive(false);
+            Heart3Unfilled.SetActive(true);
+        }
+        if(HP == 1)
+        {
+            Heart2Filled.SetActive(false);
+            Heart2Unfilled.SetActive(true);
+        }
+        if(HP == 0)
+        {
+            Heart1Filled.SetActive(false);
+            Heart1Unfilled.SetActive(true);
         }
     }
 
