@@ -143,16 +143,23 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 3.0166667
-    functionName: SetMoveRandomly
-    data: 
+  - time: 0
+    functionName: Play
+    data: BeamCharge
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0
+  - time: 1.5
     functionName: Play
-    data: Laser Blast
+    data: BeamAttack
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 3.0166667
+    functionName: SetMoveRandomly
+    data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0

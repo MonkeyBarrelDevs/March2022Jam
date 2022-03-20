@@ -766,6 +766,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9076378140012291302, guid: 81df75eb5ad78e94a86f84c8e2652119, type: 3}
+      propertyPath: orthographic size
+      value: 11.25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81df75eb5ad78e94a86f84c8e2652119, type: 3}
 --- !u!114 &862750995
@@ -1752,7 +1756,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: SpiralAttack
-    clip: {fileID: 8300000, guid: b93e70d8691d3fc469a4745251a34c1f, type: 3}
+    clip: {fileID: 8300000, guid: b46a8cd20cbbf454da3525fbc8bece85, type: 3}
     volume: 1
     pitch: 1
     SpatialBlend: 0
@@ -1760,7 +1764,7 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: BeamAttack
-    clip: {fileID: 8300000, guid: 8a83de30e5599f54490d46ad88872360, type: 3}
+    clip: {fileID: 8300000, guid: 4ef5baf5af2d8ea4d99ad337fdccc6d0, type: 3}
     volume: 1
     pitch: 1
     SpatialBlend: 0
@@ -1785,6 +1789,14 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Tracker
     clip: {fileID: 8300000, guid: 4c60fb51d96c8bc4eb9729c7ac565a2b, type: 3}
+    volume: 1
+    pitch: 1
+    SpatialBlend: 0
+    MaxDistance: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: BeamCharge
+    clip: {fileID: 8300000, guid: 080636f4f8836f94382c4e49fbbbae30, type: 3}
     volume: 1
     pitch: 1
     SpatialBlend: 0
