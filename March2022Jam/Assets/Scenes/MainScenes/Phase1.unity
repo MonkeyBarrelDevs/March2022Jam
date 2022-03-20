@@ -1293,7 +1293,7 @@ MonoBehaviour:
   projectileSpeed: 3
   circleShooterPoints: []
   shooterObject: {fileID: 5929550135406883097}
-  numOfShootingPoints: 6
+  numOfShootingPoints: 4
 --- !u!95 &1999495519 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 1867675817714420181, guid: b0cd2c217472071489e9b64690212601, type: 3}
