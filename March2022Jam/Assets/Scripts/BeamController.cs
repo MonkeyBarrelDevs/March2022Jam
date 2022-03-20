@@ -5,34 +5,11 @@ using UnityEngine;
 public class BeamController : MonoBehaviour
 {
     public Transform playerTransform;
-    public bool triggerBeam = false;
-    public bool triggerOrbitals = false;
-    public Animator bossAnimator;
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (triggerBeam == true)
-        {
-            BeamAttack();
-            triggerBeam = false;
-        }
-        if (triggerOrbitals == true)
-        {
-            bossAnimator.SetTrigger("BeamAttackActivate");
-            triggerOrbitals = false;
-        }
-    }
+    public Animator beamAnimator;
 
     public void BeamAttack()
     {
-        Target();
-        bossAnimator.SetTrigger("BeamAttackActivate");
+        beamAnimator.SetTrigger("ActivateAttack");
     }
 
     private void Target()
