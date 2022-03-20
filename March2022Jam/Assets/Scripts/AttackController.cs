@@ -38,7 +38,7 @@ public class AttackController : MonoBehaviour
 
     public void TrackerAttack() 
     {
-        Instantiate(trackerAttackObject, gameObject.transform);
+        Instantiate(trackerAttackObject, transform);
     }
 
     private void Target(Transform attackTransform)

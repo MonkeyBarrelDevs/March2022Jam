@@ -28,7 +28,7 @@ public class BossController : MonoBehaviour
         MovePhaseCheck(isMovingRandomly, isChasingPlayer);
 
         delayTimer -= Time.deltaTime;
-        if (delayTimer <= 0) 
+        if (delayTimer <= 0 && selector.isActiveAndEnabled) 
         {
             int attack = selector.ChooseAttack();
             delayTimer = attackDelays[attack];
@@ -57,6 +57,7 @@ public class BossController : MonoBehaviour
 
     void FindReferences()
     {
+        gameController = FindObjectOfType<GameContoller>();
         moveRandomly = gameObject.GetComponent<RandomDestinationSetter>();
         moveTowardsPlayer = gameObject.GetComponent<AIDestinationSetter>();
         selector = GetComponent<AttackSelection>();
