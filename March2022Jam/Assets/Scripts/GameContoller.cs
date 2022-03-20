@@ -5,6 +5,8 @@ using UnityEngine;
 public class GameContoller : MonoBehaviour
 {
     [SerializeField] GameObject pauseMenu;
+    ShootProjectiles projectileShooter;
+
     private int HP = 1;
     
     public void SetHP(int number)
@@ -26,7 +28,6 @@ public class GameContoller : MonoBehaviour
 
     public void Unpause()
     {   
-        Debug.Log("Hello");
         pauseMenu.SetActive(false);
         SetMouseState(false);
         Time.timeScale = 1f;
@@ -57,7 +58,7 @@ public class GameContoller : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape)) {
             Pause();
-        }          
+        }        
     }
 
     public void SetMouseState(bool state) 
