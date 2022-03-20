@@ -592,7 +592,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d842b8b933194548a8ed0634af09e22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 17
+  radius: 8.5
 --- !u!114 &862750997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2170,6 +2170,7 @@ GameObject:
   - component: {fileID: 862751005}
   - component: {fileID: 5929550135406883100}
   - component: {fileID: 5929550135406883099}
+  - component: {fileID: 5929550135406883101}
   m_Layer: 0
   m_Name: Phase2Boss
   m_TagString: Untagged
@@ -2232,6 +2233,59 @@ MonoBehaviour:
   battlePhase: 2
   trackerOut: 0
   orbitalsOut: 0
+--- !u!114 &5929550135406883101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5929550135406883097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7460a5aa70a711a48ac1ec5efc4110ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Spiral Attack
+    clip: {fileID: 8300000, guid: 90d726efa4f6d6140b7fffccfb6027c9, type: 3}
+    volume: 1
+    pitch: 1
+    SpatialBlend: 0
+    MaxDistance: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Orbital Activate
+    clip: {fileID: 8300000, guid: 0917ffbeab162d242a88dee40a6e93b6, type: 3}
+    volume: 1
+    pitch: 1
+    SpatialBlend: 0
+    MaxDistance: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Laser Blast
+    clip: {fileID: 8300000, guid: 8d3009bedd6f0b346886c239f6e29374, type: 3}
+    volume: 1
+    pitch: 1
+    SpatialBlend: 0
+    MaxDistance: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Sweep
+    clip: {fileID: 8300000, guid: 936722e64748bdf418245a31493df450, type: 3}
+    volume: 1
+    pitch: 1
+    SpatialBlend: 0
+    MaxDistance: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Phase 2 Track
+    clip: {fileID: 8300000, guid: d791a229ee36ef742878a1c4db238849, type: 3}
+    volume: 1
+    pitch: 1
+    SpatialBlend: 0
+    MaxDistance: 0
+    loop: 0
+    source: {fileID: 0}
 --- !u!1 &5929550137002053468
 GameObject:
   m_ObjectHideFlags: 0
