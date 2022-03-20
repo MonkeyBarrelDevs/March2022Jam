@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class AttackSelection : MonoBehaviour
 {
-    public int battlePhase;
+    [SerializeField] private int battlePhase;
     public bool trackerOut;
     public bool orbitalsOut;
-    public Animator bossAnim;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,16 +14,23 @@ public class AttackSelection : MonoBehaviour
         orbitalsOut = false;
     }
 
-    public void ChooseAttack()
+    private void Update()
+    {
+        
+    }
+
+    public int ChooseAttack()
     {
         int attackIndex = PickAttack();
         while ((orbitalsOut && attackIndex == 1) || (trackerOut && attackIndex == 4)){
             attackIndex = PickAttack();
         }
-        bossAnim.SetTrigger("attack" + attackIndex);
-        orbitalsOut = attackIndex == 1;
-        trackerOut = attackIndex == 4;
-        Debug.Log("attack ");
+        if (attackIndex == 1)
+            orbitalsOut = true;
+        if (attackIndex == 4)
+            trackerOut = true;
+        Debug.Log("Attack " + attackIndex.ToString());
+        return attackIndex;
     }
 
     private int PickAttack()
@@ -38,6 +44,6 @@ public class AttackSelection : MonoBehaviour
             case 3:
                 return Random.Range(0, 5);
         }
-        return 1;
+        return -1;
     }
 }

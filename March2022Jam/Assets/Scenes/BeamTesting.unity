@@ -436,8 +436,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 548a546fcc1fb4ca5b04f1b45d9a4c6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTransform: {fileID: 1916289141}
-  beamAnimator: {fileID: 230135604}
+  spiralAnim: {fileID: 0}
+  orbitalAnim: {fileID: 0}
+  beamAnim: {fileID: 0}
+  sweepAnim: {fileID: 0}
+  trackerAttackObject: {fileID: 0}
 --- !u!95 &230135604
 Animator:
   serializedVersion: 4
@@ -727,8 +730,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 548a546fcc1fb4ca5b04f1b45d9a4c6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTransform: {fileID: 1916289141}
-  beamAnimator: {fileID: 413199736}
+  spiralAnim: {fileID: 0}
+  orbitalAnim: {fileID: 0}
+  beamAnim: {fileID: 0}
+  sweepAnim: {fileID: 0}
+  trackerAttackObject: {fileID: 0}
 --- !u!1 &448178156
 GameObject:
   m_ObjectHideFlags: 0
@@ -1197,8 +1203,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 548a546fcc1fb4ca5b04f1b45d9a4c6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTransform: {fileID: 1916289141}
-  beamAnimator: {fileID: 596753211}
+  spiralAnim: {fileID: 0}
+  orbitalAnim: {fileID: 0}
+  beamAnim: {fileID: 0}
+  sweepAnim: {fileID: 0}
+  trackerAttackObject: {fileID: 0}
 --- !u!1 &626286528
 GameObject:
   m_ObjectHideFlags: 0
@@ -1408,8 +1417,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 548a546fcc1fb4ca5b04f1b45d9a4c6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTransform: {fileID: 1916289141}
-  beamAnimator: {fileID: 0}
+  spiralAnim: {fileID: 0}
+  orbitalAnim: {fileID: 0}
+  beamAnim: {fileID: 0}
+  sweepAnim: {fileID: 0}
+  trackerAttackObject: {fileID: 0}
 --- !u!1 &793474064
 GameObject:
   m_ObjectHideFlags: 0
@@ -1620,8 +1632,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 548a546fcc1fb4ca5b04f1b45d9a4c6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTransform: {fileID: 1916289141}
-  beamAnimator: {fileID: 1025672032}
+  spiralAnim: {fileID: 0}
+  orbitalAnim: {fileID: 0}
+  beamAnim: {fileID: 0}
+  sweepAnim: {fileID: 0}
+  trackerAttackObject: {fileID: 0}
 --- !u!1 &1044706999
 GameObject:
   m_ObjectHideFlags: 0

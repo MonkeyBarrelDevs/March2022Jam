@@ -2,17 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BeamController : MonoBehaviour
+public class TargetingSystem : MonoBehaviour
 {
-    public Transform playerTransform;
-    public Animator beamAnimator;
+    Transform playerTransform;
 
-    public void BeamAttack()
+    private void Start()
     {
-        beamAnimator.SetTrigger("ActivateAttack");
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
-    private void Target()
+    private void TargetPlayer()
     {
         Vector2 direction = playerTransform.position - transform.position;
         transform.rotation = Quaternion.FromToRotation(Vector3.up, direction);
