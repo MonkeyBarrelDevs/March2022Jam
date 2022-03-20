@@ -5,6 +5,8 @@ using UnityEngine;
 public class GameContoller : MonoBehaviour
 {
     [SerializeField] GameObject pauseMenu;
+    [SerializeField] float invulerabilityTime = .3f;
+    private float iFrameTime = 0f;
     private int HP = 1;
     
     public void SetHP(int number)
@@ -14,7 +16,11 @@ public class GameContoller : MonoBehaviour
 
     public void SubtractHP(int number)
     {
-        HP = HP - number;
+        if (iFrameTime <= 0)
+        {
+            HP = HP - number;
+            iFrameTime = invulerabilityTime;
+        }
     }
 
     public void Pause()
@@ -51,12 +57,15 @@ public class GameContoller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(HP == 0)
+        if(HP <= 0)
             Lose();
+
+        if (iFrameTime >= 0)
+            iFrameTime -= Time.deltaTime;
 
         if (Input.GetKeyDown(KeyCode.Escape)) {
             Pause();
-        }          
+        }
     }
 
     public void SetMouseState(bool state) 
