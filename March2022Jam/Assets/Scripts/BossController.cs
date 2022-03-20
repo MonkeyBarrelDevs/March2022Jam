@@ -14,6 +14,12 @@ public class BossController : MonoBehaviour
     private GameContoller gameController;
     public bool isMovingRandomly = false;
     public bool isChasingPlayer = false;
+    public cameraShake cameraShake;
+    [SerializeField]
+    [Range(0, 1)]
+    public float duration = 0.15f;
+    [Range(0,1)]
+    public float magnitude = 0.4f;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +38,9 @@ public class BossController : MonoBehaviour
         {
             int attack = selector.ChooseAttack();
             delayTimer = attackDelays[attack];
+            if (attack == 2) {
+                Rumble();
+            }
             bossAnim.SetTrigger("attack " + attack.ToString());
         }
     }
@@ -90,5 +99,10 @@ public class BossController : MonoBehaviour
     public void StaggerTransition() 
     {
         gameController.GoToNextPhase();
+    }
+
+    
+     private void Rumble() {
+        StartCoroutine(cameraShake.Shake(duration, magnitude));
     }
 }

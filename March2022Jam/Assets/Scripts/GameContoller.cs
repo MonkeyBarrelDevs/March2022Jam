@@ -14,6 +14,7 @@ public class GameContoller : MonoBehaviour
     [SerializeField] BossController boss;
     [SerializeField] int HP = 3;
     private float iFrameTime = -.01f;
+    AudioManager audioManager;
 
     public void SetHP(int number)
     {
@@ -24,7 +25,7 @@ public class GameContoller : MonoBehaviour
     {
         if (iFrameTime <= 0)
         {
-            Debug.Log("Ouch");
+            audioManager.Play("Hurt");
             HP -= number;
             iFrameTime = invulerabilityTime;
         }
@@ -53,6 +54,7 @@ public class GameContoller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioManager = GetComponent<AudioManager>();
         //Replace 0 and "Temp" with the length of the first song and the scene name.
         loader = FindObjectOfType<LevelLoader>();
         if(transitionByMusic)
@@ -97,4 +99,5 @@ public class GameContoller : MonoBehaviour
         yield return new WaitForSeconds(delay);
         boss.Stagger();
     }
+
 }

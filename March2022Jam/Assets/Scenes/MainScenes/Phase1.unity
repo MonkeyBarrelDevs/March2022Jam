@@ -180,6 +180,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f395a5bfef608a4181bc2c751709f5f, type: 3}
+--- !u!1 &216867980 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9076378140012291301, guid: 81df75eb5ad78e94a86f84c8e2652119, type: 3}
+  m_PrefabInstance: {fileID: 842198251}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &366707802
 GameObject:
   m_ObjectHideFlags: 0
@@ -879,6 +884,9 @@ MonoBehaviour:
   delayTimer: 3
   isMovingRandomly: 0
   isChasingPlayer: 0
+  cameraShake: {fileID: 0}
+  duration: 0.15
+  magnitude: 0.4
 --- !u!114 &862751003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1668,6 +1676,7 @@ GameObject:
   - component: {fileID: 5929550135406883100}
   - component: {fileID: 5929550135406883099}
   - component: {fileID: 5929550135406883101}
+  - component: {fileID: 5929550135406883102}
   m_Layer: 0
   m_Name: Phase1Boss
   m_TagString: Untagged
@@ -1782,6 +1791,18 @@ MonoBehaviour:
     MaxDistance: 0
     loop: 0
     source: {fileID: 0}
+--- !u!114 &5929550135406883102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5929550135406883097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36a0b2c04a562ae48a523b275ae31294, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5929550137002053468
 GameObject:
   m_ObjectHideFlags: 0
@@ -1871,3 +1892,30 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 9076378140012291302, guid: 81df75eb5ad78e94a86f84c8e2652119, type: 3}
   m_PrefabInstance: {fileID: 842198251}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &9076378139713554451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 216867980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72f14c640c2381144a1dcc3d0ffc93d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraShake: {fileID: 9076378139713554452}
+  duration: 0.15
+  magnitude: 0.4
+--- !u!114 &9076378139713554452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 216867980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36a0b2c04a562ae48a523b275ae31294, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
