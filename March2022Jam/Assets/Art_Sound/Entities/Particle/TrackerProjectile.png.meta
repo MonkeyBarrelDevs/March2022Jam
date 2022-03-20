@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0c5c6ce4a9040a64a8a22909f329f25b
+guid: b0ba4d27bdab6a045b270b38757f9183
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -128,13 +128,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Gigabeam 1_0
+      name: TrackerProjectile_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 256
-        height: 2240
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,20 +142,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f0b1a766c2058e46b55a3e0aab5bb62
-      internalID: 323377861
+      spriteID: ad528c4220b60294f9031c825470f234
+      internalID: -1940578874
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gigabeam 1_1
+      name: TrackerProjectile_1
       rect:
         serializedVersion: 2
-        x: 256
+        x: 64
         y: 0
-        width: 256
-        height: 2240
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,8 +163,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8663ac59d43ee0840ab954c6c5339fc4
-      internalID: 468438321
+      spriteID: b49f692f12f0e3046a0920b052b93ad5
+      internalID: -1074013867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TrackerProjectile_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8ad9e3197e04a04f929840e64b3fc1f
+      internalID: -559007281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TrackerProjectile_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a468b460fa6cfb4aad9905f5ab8743e
+      internalID: 1612690094
       vertices: []
       indices: 
       edges: []
@@ -180,8 +222,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Gigabeam 1_0: 323377861
-      Gigabeam 1_1: 468438321
+      TrackerProjectile_3: 1612690094
+      TrackerProjectile_1: -1074013867
+      TrackerProjectile_2: -559007281
+      TrackerProjectile_0: -1940578874
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

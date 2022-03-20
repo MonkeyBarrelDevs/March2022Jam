@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TrackerController : MonoBehaviour
 {
+    [SerializeField] float lifeTime = 10f;
     private Transform target;
     public float speed = 5;
     private Rigidbody2D rb;
@@ -14,6 +15,7 @@ public class TrackerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
+        Destroy(gameObject, lifeTime);
     }
 
     // Update is called once per frame
