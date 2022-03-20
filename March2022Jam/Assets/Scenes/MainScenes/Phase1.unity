@@ -713,6 +713,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3592959162641870464, guid: 81df75eb5ad78e94a86f84c8e2652119, type: 3}
+      propertyPath: moveSpeed
+      value: 8.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3592959162641870492, guid: 81df75eb5ad78e94a86f84c8e2652119, type: 3}
       propertyPath: m_Name
       value: Player
@@ -761,6 +765,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3592959162641870494, guid: 81df75eb5ad78e94a86f84c8e2652119, type: 3}
+      propertyPath: m_Radius
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81df75eb5ad78e94a86f84c8e2652119, type: 3}
 --- !u!114 &862750995
@@ -803,7 +811,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 5
-  radius: 0.5
+  radius: 2.95
   height: 2
   canMove: 1
   maxSpeed: 5
@@ -873,7 +881,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDelays:
-  - 5
+  - 12
   - 3
   - 3
   delayTimer: 3
@@ -906,7 +914,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.5
+  m_Radius: 2.92
 --- !u!114 &862751005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -935,10 +943,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: bd0dbc2084b0b974bb7443787dfe050a, type: 3}
+    - target: {fileID: 7007754924976322826, guid: edacd07f0ff7d214c996cbf475cbab3b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -10
+      objectReference: {fileID: 0}
     - target: {fileID: 7007754925194661056, guid: edacd07f0ff7d214c996cbf475cbab3b, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: bd0dbc2084b0b974bb7443787dfe050a, type: 3}
+    - target: {fileID: 7007754925194661057, guid: edacd07f0ff7d214c996cbf475cbab3b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7007754925323090280, guid: edacd07f0ff7d214c996cbf475cbab3b, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1334,6 +1350,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1986885045}
+  - {fileID: 1977911633}
   m_Father: {fileID: 5929550135406883098}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1419,6 +1436,75 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55a43f69866d4af47bc108c9db53ce3d, type: 3}
+--- !u!1 &1977911632
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1977911633}
+  - component: {fileID: 1977911635}
+  - component: {fileID: 1977911634}
+  m_Layer: 0
+  m_Name: SpiralShooter (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1977911633
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977911632}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1504209715}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1977911634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977911632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 805cc4ec7601ace47a6907c12523173e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shooterObject: {fileID: 5929550135406883097}
+  speedOfRotation: 0.5
+  timeBetweenShakes: 1
+  shakeRotate: 0
+--- !u!114 &1977911635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977911632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57265692263eba44a9e5493562c85c81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shooterObjects:
+  - {fileID: 0}
+  projectileObject: {fileID: 7454478889207899541, guid: 88a0a9491345d3a44a034c98c2a476e7, type: 3}
+  shootingInterval: 0.2
+  projectileSpeed: 5
+  circleShooterPoints: []
+  shooterObject: {fileID: 5929550135406883097}
+  numOfShootingPoints: 6
 --- !u!1 &1986885044
 GameObject:
   m_ObjectHideFlags: 0
@@ -1465,8 +1551,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shooterObject: {fileID: 5929550135406883097}
-  speedOfRotation: 0.5
-  timeBetweenShakes: 1
+  speedOfRotation: -0.5
+  timeBetweenShakes: 1.5
   shakeRotate: 0
 --- !u!114 &1986885047
 MonoBehaviour:
@@ -1487,7 +1573,7 @@ MonoBehaviour:
   projectileSpeed: 5
   circleShooterPoints: []
   shooterObject: {fileID: 5929550135406883097}
-  numOfShootingPoints: 6
+  numOfShootingPoints: 7
 --- !u!95 &1999495519 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 1867675817714420181, guid: b0cd2c217472071489e9b64690212601, type: 3}
@@ -1626,7 +1712,7 @@ Transform:
   m_GameObject: {fileID: 5929550137002053468}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5929550135406883098}

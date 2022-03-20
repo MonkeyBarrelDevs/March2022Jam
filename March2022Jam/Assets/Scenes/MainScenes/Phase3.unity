@@ -1102,6 +1102,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3592959162641870494, guid: 81df75eb5ad78e94a86f84c8e2652119, type: 3}
+      propertyPath: m_Radius
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81df75eb5ad78e94a86f84c8e2652119, type: 3}
 --- !u!4 &1974166101 stripped
@@ -1295,7 +1299,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 1.6
 --- !u!114 &3090083869867742058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1326,7 +1330,7 @@ MonoBehaviour:
   radius: 0.5
   height: 2
   canMove: 1
-  maxSpeed: 5
+  maxSpeed: 4
   gravity: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2
@@ -2052,8 +2056,8 @@ Transform:
   m_GameObject: {fileID: 8695272782049400101}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 8695272783607163747}
   m_RootOrder: 0
