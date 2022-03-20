@@ -15,7 +15,7 @@ public class causeCamShake : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0))
         {
-            StartCoroutine(cameraShake.Shake(duration, magnitude));
+            //StartCoroutine(cameraShake.Shake(duration, magnitude));
         }
     }
 }

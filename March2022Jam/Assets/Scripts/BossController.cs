@@ -20,7 +20,9 @@ public class BossController : MonoBehaviour
     public float duration = 0.15f;
     [Range(0,50)]
     public float magnitude = 0.4f;
-
+    [SerializeField]
+    [Range(0,50)]
+    public float modifier = 0.0002f;
     // Start is called before the first frame update
     void Start()
     {
@@ -104,6 +106,6 @@ public class BossController : MonoBehaviour
 
     
      private void Rumble() {
-        StartCoroutine(cameraShake.Shake(duration, magnitude));
+        StartCoroutine(cameraShake.Shake(duration, magnitude, modifier));
     }
 }

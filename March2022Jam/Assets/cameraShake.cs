@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class cameraShake : MonoBehaviour
 {
-    public IEnumerator Shake (float duration, float magnitude)
+    public IEnumerator Shake (float duration, float magnitude, float modifier)
     {
         Vector3 originalPos = transform.localPosition;
 
@@ -18,7 +18,7 @@ public class cameraShake : MonoBehaviour
             transform.localPosition = new Vector3(x,y,originalPos.z);
 
             elapsed += Time.deltaTime;
-            magnitude += 0.0002f;
+            magnitude += modifier;
 
             yield return null;
         }
