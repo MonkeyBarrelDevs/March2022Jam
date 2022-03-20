@@ -32,7 +32,7 @@ public class ShootProjectiles : MonoBehaviour
         {
             timeSinceShot = 0f;
             circleShooterPoints.Clear();
-            DrawCirclePoints(numOfShootingPoints, 1.0, shooterObject.transform.position, shooterObject.transform.rotation);
+            DrawCirclePoints(numOfShootingPoints, 1.0, gameObject.transform.position, gameObject.transform.rotation);
 
             /*
             for (int i = 0; i < shooterObjects.Length; i++)
@@ -44,7 +44,7 @@ public class ShootProjectiles : MonoBehaviour
             for (int j = 0; j < numOfShootingPoints; j++)
             {
                 GameObject obj = Instantiate(projectileObject, circleShooterPoints[j], Quaternion.identity);
-                obj.GetComponent<Rigidbody2D>().velocity = circleShooterPoints[j] - projectileObject.transform.position * projectileSpeed;
+                obj.GetComponent<Rigidbody2D>().velocity = (circleShooterPoints[j] - gameObject.transform.position) * projectileSpeed;
             }
         }
     }

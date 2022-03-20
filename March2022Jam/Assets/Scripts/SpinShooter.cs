@@ -31,6 +31,6 @@ public class SpinShooter : MonoBehaviour
             }
         }
         
-        shooterObject.transform.Rotate(0.0f, 0.0f, speedOfRotation, Space.World);
+        gameObject.transform.Rotate(0.0f, 0.0f, speedOfRotation, Space.World);
     }
 }
