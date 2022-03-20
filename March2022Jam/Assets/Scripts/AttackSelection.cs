@@ -58,7 +58,7 @@ public class AttackSelection : MonoBehaviour
                 audioManager.Play("Orbital");
                 return;
             case 2: // Beam
-                audioManager.Play("BeamAttack");
+                //audioManager.Play("BeamAttack");
                 return;
             case 3: // Sweep
                 audioManager.Play("Sweep");
