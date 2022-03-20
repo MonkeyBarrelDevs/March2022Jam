@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] float moveAnimThreshold = .1f;
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
     bool canMove = true;
@@ -29,10 +30,11 @@ public class PlayerMovement : MonoBehaviour
             movement.x = 0;
             movement.y = 0;
         }
-
-        /*animator.SetFloat("Horizontal",movement.x);
-        animator.SetFloat("Vertical",movement.y);
-        animator.SetFloat("Speed",movement.sqrMagnitude);*/
+        
+        playerAnim.SetBool("Walk North", movement.y > moveAnimThreshold);
+        playerAnim.SetBool("Walk South", movement.y < -moveAnimThreshold);
+        playerAnim.SetBool("Walk East", movement.x > moveAnimThreshold);
+        playerAnim.SetBool("Walk West", movement.x < -moveAnimThreshold);
     }
 
     void FixedUpdate()

@@ -72,8 +72,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 67fdbd427f4f5a54894c22eaca173127, type: 3}
+  m_SortingOrder: 4
+  m_Sprite: {fileID: -1358530500, guid: ad779f4b11aa7754c9b7083262eaf560, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -133,6 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a57291f7109502c429bba69458cd6f2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveAnimThreshold: 0.1
   moveSpeed: 10
   rb: {fileID: 3592959162641870495}
 --- !u!50 &3592959162641870495
@@ -171,7 +172,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.3
 --- !u!95 &1602858261
 Animator:
   serializedVersion: 4
@@ -201,11 +202,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5487922596453304656, guid: 309ce037421e62b48937e56777f7085a, type: 3}
       propertyPath: orthographic size
-      value: 11.25
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5487922596453304659, guid: 309ce037421e62b48937e56777f7085a, type: 3}
       propertyPath: m_Name
       value: PP Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487922596453304750, guid: 309ce037421e62b48937e56777f7085a, type: 3}
+      propertyPath: m_RefResolutionX
+      value: 1280
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487922596453304750, guid: 309ce037421e62b48937e56777f7085a, type: 3}
+      propertyPath: m_RefResolutionY
+      value: 1280
       objectReference: {fileID: 0}
     - target: {fileID: 5487922596453304751, guid: 309ce037421e62b48937e56777f7085a, type: 3}
       propertyPath: m_RootOrder

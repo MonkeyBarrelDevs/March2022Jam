@@ -14,7 +14,7 @@ public class GameContoller : MonoBehaviour
     [SerializeField] BossController boss;
     [SerializeField] int HP = 3;
     private float iFrameTime = -.01f;
-    
+
     public void SetHP(int number)
     {
         HP = number;
@@ -55,6 +55,8 @@ public class GameContoller : MonoBehaviour
     {
         //Replace 0 and "Temp" with the length of the first song and the scene name.
         loader = FindObjectOfType<LevelLoader>();
+        if(transitionByMusic)
+            StartCoroutine(StaggerAfterSong(musicLength));
     }
 
     // Update is called once per frame

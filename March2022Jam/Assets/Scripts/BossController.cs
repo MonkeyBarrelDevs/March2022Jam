@@ -57,6 +57,7 @@ public class BossController : MonoBehaviour
 
     void FindReferences()
     {
+        gameController = FindObjectOfType<GameContoller>();
         moveRandomly = gameObject.GetComponent<RandomDestinationSetter>();
         moveTowardsPlayer = gameObject.GetComponent<AIDestinationSetter>();
         selector = GetComponent<AttackSelection>();
