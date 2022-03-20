@@ -16,6 +16,13 @@ public class GameContoller : MonoBehaviour
     private float iFrameTime = -.01f;
     AudioManager audioManager;
 
+    GameObject Heart1Filled;
+    GameObject Heart2Filled;
+    GameObject Heart3Filled;
+    GameObject Heart1Unfilled;
+    GameObject Heart2Unfilled;
+    GameObject Heart3Unfilled;
+
     public void SetHP(int number)
     {
         HP = number;
@@ -25,7 +32,7 @@ public class GameContoller : MonoBehaviour
     {
         if (iFrameTime <= 0)
         {
-            audioManager.Play("Hurt");
+            //audioManager.Play("Hurt");
             HP -= number;
             iFrameTime = invulerabilityTime;
         }
@@ -59,6 +66,15 @@ public class GameContoller : MonoBehaviour
         loader = FindObjectOfType<LevelLoader>();
         if(transitionByMusic)
             StartCoroutine(StaggerAfterSong(musicLength));
+        Heart1Filled = GameObject.Find("Heart1Filled");
+        Heart2Filled = GameObject.Find("Heart2Filled");
+        Heart3Filled = GameObject.Find("Heart3Filled");
+        Heart1Unfilled = GameObject.Find("Heart1Filled");
+        Heart2Unfilled = GameObject.Find("Heart2Filled");
+        Heart3Unfilled = GameObject.Find("Heart3Filled");
+        Heart1Unfilled.SetActive(false);
+        Heart2Unfilled.SetActive(false);
+        Heart3Unfilled.SetActive(false);
     }
 
     // Update is called once per frame
@@ -72,6 +88,21 @@ public class GameContoller : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape)) {
             Pause();
+        }
+        if(HP == 2)
+        {
+            Heart3Filled.SetActive(false);
+            Heart3Unfilled.SetActive(true);
+        }
+        if(HP == 2)
+        {
+            Heart2Filled.SetActive(false);
+            Heart2Unfilled.SetActive(true);
+        }
+        if(HP == 3)
+        {
+            Heart1Filled.SetActive(false);
+            Heart1Unfilled.SetActive(true);
         }
     }
 
