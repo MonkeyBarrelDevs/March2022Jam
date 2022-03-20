@@ -15,8 +15,13 @@ public class LevelLoader : MonoBehaviour
     {
         if (autoTransition) 
         {
-            StartCoroutine(Delay(autoTransTargetScene, autoTransDelay));
+            DelayLoadLevelWithName(autoTransTargetScene, autoTransDelay);
         }
+    }
+
+    public string getSceneName() 
+    {
+        return SceneManager.GetActiveScene().name;
     }
 
     public void LoadNextLevel()
@@ -37,6 +42,11 @@ public class LevelLoader : MonoBehaviour
     public void LoadLevelWithName(string name)
     {
         StartCoroutine(LoadLevel(name));
+    }
+
+    public void DelayLoadLevelWithName(string sceneName, float delay) 
+    {
+        StartCoroutine(Delay(sceneName, delay));
     }
 
     public void ExitGame()
