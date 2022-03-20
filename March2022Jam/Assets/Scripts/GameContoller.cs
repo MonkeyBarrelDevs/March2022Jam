@@ -5,8 +5,11 @@ using UnityEngine;
 public class GameContoller : MonoBehaviour
 {
     [SerializeField] GameObject pauseMenu;
-    ShootProjectiles projectileShooter;
-
+    [SerializeField] LevelLoader loader;
+    [SerializeField] float respawnDelay = .5f;
+    [SerializeField] float invulerabilityTime = .3f;
+    [SerializeField] Animator playerAnim;
+    private float iFrameTime = 0f;
     private int HP = 1;
     
     public void SetHP(int number)
@@ -16,7 +19,11 @@ public class GameContoller : MonoBehaviour
 
     public void SubtractHP(int number)
     {
-        HP = HP - number;
+        if (iFrameTime <= 0)
+        {
+            HP = HP - number;
+            iFrameTime = invulerabilityTime;
+        }
     }
 
     public void Pause()
@@ -33,15 +40,10 @@ public class GameContoller : MonoBehaviour
         Time.timeScale = 1f;
     }
 
-    IEnumerator Wait(int seconds)
-    {
-        yield return new WaitForSeconds(seconds);
-    }
-
     public void Lose()
     {
-        Pause();
-        //Transition to death screen (SceneManager method)
+        playerAnim.SetTrigger("Die");
+        loader.DelayLoadLevelWithName(loader.getSceneName(), respawnDelay);
     }
 
     // Start is called before the first frame update
@@ -53,12 +55,15 @@ public class GameContoller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(HP == 0)
+        if(HP <= 0)
             Lose();
+
+        if (iFrameTime >= 0)
+            iFrameTime -= Time.deltaTime;
 
         if (Input.GetKeyDown(KeyCode.Escape)) {
             Pause();
-        }        
+        }
     }
 
     public void SetMouseState(bool state) 
