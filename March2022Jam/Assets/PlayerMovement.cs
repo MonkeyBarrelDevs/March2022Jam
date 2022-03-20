@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
+    bool canMove = true;
     Animator playerAnim;
 
     Vector2 movement;
@@ -18,8 +19,16 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        if (canMove)
+        {
+            movement.x = Input.GetAxisRaw("Horizontal");
+            movement.y = Input.GetAxisRaw("Vertical");
+        }
+        else
+        {
+            movement.x = 0;
+            movement.y = 0;
+        }
 
         /*animator.SetFloat("Horizontal",movement.x);
         animator.SetFloat("Vertical",movement.y);
@@ -31,8 +40,9 @@ public class PlayerMovement : MonoBehaviour
         rb.MovePosition(rb.position + movement.normalized * moveSpeed * Time.fixedDeltaTime);
     }
 
-    public void Die() 
+    public void Die()
     {
+        canMove = false;
         playerAnim.SetTrigger("Die");
     }
 }

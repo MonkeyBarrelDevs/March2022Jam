@@ -257,8 +257,8 @@ MonoBehaviour:
   musicLength: 133
   pauseMenu: {fileID: 1390774015}
   loader: {fileID: 2077758552}
-  respawnDelay: 0.5
-  invulerabilityTime: 0.3
+  respawnDelay: 0.25
+  invulerabilityTime: 0.5
   player: {fileID: 1602858264}
   boss: {fileID: 862750999}
   HP: 3
@@ -289,6 +289,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5929550135406883098}
     m_Modifications:
+    - target: {fileID: 1867675817068687536, guid: b0cd2c217472071489e9b64690212601, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1867675817068687536, guid: b0cd2c217472071489e9b64690212601, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 35.00855
+      objectReference: {fileID: 0}
+    - target: {fileID: 1867675817068687537, guid: b0cd2c217472071489e9b64690212601, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1867675817068687539, guid: b0cd2c217472071489e9b64690212601, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b07382449908eb044bc1ae783d567d8d, type: 3}
     - target: {fileID: 1867675817714420202, guid: b0cd2c217472071489e9b64690212601, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -340,6 +356,22 @@ PrefabInstance:
     - target: {fileID: 1867675817714420203, guid: b0cd2c217472071489e9b64690212601, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1867675817910076036, guid: b0cd2c217472071489e9b64690212601, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1867675817910076038, guid: b0cd2c217472071489e9b64690212601, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b07382449908eb044bc1ae783d567d8d, type: 3}
+    - target: {fileID: 1867675817910076039, guid: b0cd2c217472071489e9b64690212601, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1867675817910076039, guid: b0cd2c217472071489e9b64690212601, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 35.00855
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0cd2c217472071489e9b64690212601, type: 3}
@@ -745,7 +777,7 @@ MonoBehaviour:
   - 5
   - 3
   - 3
-  delayTimer: 5
+  delayTimer: 3
   isMovingRandomly: 0
   isChasingPlayer: 0
 --- !u!114 &862751003
@@ -801,6 +833,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5929550135406883098}
     m_Modifications:
+    - target: {fileID: 7007754924976322821, guid: edacd07f0ff7d214c996cbf475cbab3b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bd0dbc2084b0b974bb7443787dfe050a, type: 3}
+    - target: {fileID: 7007754925194661056, guid: edacd07f0ff7d214c996cbf475cbab3b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bd0dbc2084b0b974bb7443787dfe050a, type: 3}
     - target: {fileID: 7007754925323090280, guid: edacd07f0ff7d214c996cbf475cbab3b, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1248,7 +1288,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  projectileObject: {fileID: 9010268213394473837, guid: 335e09eb12d200c418ef51946b847848, type: 3}
+  projectileObject: {fileID: 7454478889207899541, guid: 88a0a9491345d3a44a034c98c2a476e7, type: 3}
   shootingInterval: 0.1
   projectileSpeed: 3
   circleShooterPoints: []

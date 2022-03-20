@@ -22,9 +22,9 @@ public class GameContoller : MonoBehaviour
 
     public void SubtractHP(int number)
     {
-        Debug.Log("Ouch");
         if (iFrameTime <= 0)
         {
+            Debug.Log("Ouch");
             HP -= number;
             iFrameTime = invulerabilityTime;
         }
