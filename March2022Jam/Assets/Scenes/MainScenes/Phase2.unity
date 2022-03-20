@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &63818135 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7243213771583884718, guid: a55976aab26fa514d81f8846b8aae11c, type: 3}
+  m_PrefabInstance: {fileID: 675631456}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &74962825 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3042838323901038958, guid: 55a43f69866d4af47bc108c9db53ce3d, type: 3}
@@ -195,6 +200,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f395a5bfef608a4181bc2c751709f5f, type: 3}
+--- !u!1 &290854937 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7243213771583884718, guid: a55976aab26fa514d81f8846b8aae11c, type: 3}
+  m_PrefabInstance: {fileID: 2986376793898913193}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &366707802
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,6 +551,43 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7508285693759244620, guid: a55976aab26fa514d81f8846b8aae11c, type: 3}
   m_PrefabInstance: {fileID: 675631456}
   m_PrefabAsset: {fileID: 0}
+--- !u!212 &675631461 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2046783386813483130, guid: a55976aab26fa514d81f8846b8aae11c, type: 3}
+  m_PrefabInstance: {fileID: 675631456}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &675631462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63818135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8edf2d55ca588547881b7472e926510, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TrailName: 
+  m_CurrentTrailPreset: {fileID: 11400000, guid: 656b9a0249299b74eb4102b5af4a08f1, type: 2}
+  m_TrailParent: {fileID: 0}
+  m_SpriteToDuplicate: {fileID: 675631461}
+  m_Layer: 0
+  m_ZMoveStep: 0.0001
+  m_ZMoveMax: 0.9999
+  m_HideTrailOnDisabled: 1
+  m_TrailActivationCondition: 0
+  m_TrailDeactivationCondition: 0
+  m_StartIfUnderVelocity: 0
+  m_VelocityStartIsLocalSpace: 0
+  m_VelocityNeededToStart: 0
+  m_StopIfOverVelocity: 0
+  m_VelocityStopIsLocalSpace: 0
+  m_VelocityNeededToStop: 0
+  m_TrailActivationDuration: 0
+  m_SortingLayerID: 0
+  m_OrderInSortingLayer: 0
+  m_DisabledElementsInTrail: []
 --- !u!1 &725381246
 GameObject:
   m_ObjectHideFlags: 0
@@ -1904,6 +1951,7 @@ GameObject:
   - component: {fileID: 473631495068478938}
   - component: {fileID: 473631495068478939}
   - component: {fileID: 473631495068478940}
+  - component: {fileID: 473631495068478941}
   m_Layer: 0
   m_Name: Sweep1
   m_TagString: Untagged
@@ -2001,6 +2049,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58f53f3b2d8647e47800aae6f2e3bedf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &473631495068478941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473631495068478937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8edf2d55ca588547881b7472e926510, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TrailName: 
+  m_CurrentTrailPreset: {fileID: 11400000, guid: ac13e476cef46184f8bd766e70c08fbd, type: 2}
+  m_TrailParent: {fileID: 0}
+  m_SpriteToDuplicate: {fileID: 473631495068478938}
+  m_Layer: 0
+  m_ZMoveStep: 0.0001
+  m_ZMoveMax: 0.9999
+  m_HideTrailOnDisabled: 1
+  m_TrailActivationCondition: 0
+  m_TrailDeactivationCondition: 0
+  m_StartIfUnderVelocity: 0
+  m_VelocityStartIsLocalSpace: 0
+  m_VelocityNeededToStart: 0
+  m_StopIfOverVelocity: 0
+  m_VelocityStopIsLocalSpace: 0
+  m_VelocityNeededToStop: 0
+  m_TrailActivationDuration: 0
+  m_SortingLayerID: 0
+  m_OrderInSortingLayer: 0
+  m_DisabledElementsInTrail: []
 --- !u!1 &965092830912214533
 GameObject:
   m_ObjectHideFlags: 0
@@ -2444,6 +2524,43 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7508285693759244620, guid: a55976aab26fa514d81f8846b8aae11c, type: 3}
   m_PrefabInstance: {fileID: 2986376793898913193}
   m_PrefabAsset: {fileID: 0}
+--- !u!212 &2986376793898913198 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2046783386813483130, guid: a55976aab26fa514d81f8846b8aae11c, type: 3}
+  m_PrefabInstance: {fileID: 2986376793898913193}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2986376793898913199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 290854937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8edf2d55ca588547881b7472e926510, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TrailName: 
+  m_CurrentTrailPreset: {fileID: 11400000, guid: 656b9a0249299b74eb4102b5af4a08f1, type: 2}
+  m_TrailParent: {fileID: 0}
+  m_SpriteToDuplicate: {fileID: 2986376793898913198}
+  m_Layer: 0
+  m_ZMoveStep: 0.0001
+  m_ZMoveMax: 0.9999
+  m_HideTrailOnDisabled: 1
+  m_TrailActivationCondition: 0
+  m_TrailDeactivationCondition: 0
+  m_StartIfUnderVelocity: 0
+  m_VelocityStartIsLocalSpace: 0
+  m_VelocityNeededToStart: 0
+  m_StopIfOverVelocity: 0
+  m_VelocityStopIsLocalSpace: 0
+  m_VelocityNeededToStop: 0
+  m_TrailActivationDuration: 0
+  m_SortingLayerID: 0
+  m_OrderInSortingLayer: 0
+  m_DisabledElementsInTrail: []
 --- !u!114 &5190401673405932891
 MonoBehaviour:
   m_ObjectHideFlags: 0
