@@ -14,6 +14,8 @@ public class GameContoller : MonoBehaviour
     [SerializeField] BossController boss;
     [SerializeField] int HP = 3;
     private float iFrameTime = -.01f;
+
+    AudioManager audioManager;
     
     public void SetHP(int number)
     {
@@ -25,6 +27,7 @@ public class GameContoller : MonoBehaviour
         if (iFrameTime <= 0)
         {
             Debug.Log("Ouch");
+            audioManager.Play("Hurt");
             HP -= number;
             iFrameTime = invulerabilityTime;
         }
@@ -55,6 +58,7 @@ public class GameContoller : MonoBehaviour
     {
         //Replace 0 and "Temp" with the length of the first song and the scene name.
         loader = FindObjectOfType<LevelLoader>();
+        audioManager = GetComponent<AudioManager>();
     }
 
     // Update is called once per frame

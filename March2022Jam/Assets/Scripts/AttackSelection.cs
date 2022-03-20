@@ -7,11 +7,16 @@ public class AttackSelection : MonoBehaviour
     [SerializeField] private int battlePhase;
     public bool trackerOut;
     public bool orbitalsOut;
+    AudioManager audioManager;
+
+
     // Start is called before the first frame update
     void Start()
     {
         trackerOut = false;
         orbitalsOut = false;
+        audioManager = GetComponent<AudioManager>();
+
     }
 
     private void Update()
@@ -28,9 +33,29 @@ public class AttackSelection : MonoBehaviour
         if (attackIndex == 1)
             orbitalsOut = true;
         if (attackIndex == 4)
-            trackerOut = true;
         Debug.Log("Attack " + attackIndex.ToString());
+        PickSound(attackIndex);
         return attackIndex;
+    }
+
+    private void PickSound(int index) {
+        switch (index) {
+            case 0: // Spiral
+                audioManager.Play("SpiralAttack");
+                return;
+            case 1: // Orbital
+                audioManager.Play("Orbital");
+                return;
+            case 2: // Beam
+                audioManager.Play("BeamAttack");
+                return;
+            case 3: // Sweep
+                audioManager.Play("Sweep");
+                return;
+            case 4: // Tracker
+                audioManager.Play("Tracker");
+                return;
+        }
     }
 
     private int PickAttack()
