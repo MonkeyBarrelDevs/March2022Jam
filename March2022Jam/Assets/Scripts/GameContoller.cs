@@ -22,7 +22,6 @@ public class GameContoller : MonoBehaviour
     [SerializeField] GameObject Heart2Unfilled;
     [SerializeField] GameObject Heart3Unfilled;
 
-
     public void SetHP(int number)
     {
         HP = number;
@@ -81,9 +80,10 @@ public class GameContoller : MonoBehaviour
         if (iFrameTime > 0)
             iFrameTime -= Time.deltaTime;
 
-        /*if (Input.GetKeyDown(KeyCode.Escape)) {
-            Pause();
-        }*/
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            loader.LoadLevelWithName("MainMenu");
+            //Pause();
+        }
 
         if(HP == 2)
         {
