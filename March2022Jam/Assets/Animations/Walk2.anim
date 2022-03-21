@@ -21,17 +21,17 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: -2119557527, guid: e28e7ebe7365cc2458031aff82058efb, type: 3}
-    - time: 0.15
+    - time: 0.11666667
       value: {fileID: 275249026, guid: e28e7ebe7365cc2458031aff82058efb, type: 3}
-    - time: 0.3
+    - time: 0.23333333
       value: {fileID: -1635059944, guid: e28e7ebe7365cc2458031aff82058efb, type: 3}
-    - time: 0.45
+    - time: 0.35
       value: {fileID: -1207847797, guid: e28e7ebe7365cc2458031aff82058efb, type: 3}
-    - time: 0.6
+    - time: 0.45
       value: {fileID: 227373138, guid: e28e7ebe7365cc2458031aff82058efb, type: 3}
-    - time: 0.75
+    - time: 0.56666666
       value: {fileID: -1979241709, guid: e28e7ebe7365cc2458031aff82058efb, type: 3}
-    - time: 0.9
+    - time: 0.68333334
       value: {fileID: -2119557527, guid: e28e7ebe7365cc2458031aff82058efb, type: 3}
     attribute: m_Sprite
     path: Boss_Model
@@ -64,7 +64,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.9166666
+    m_StopTime: 0.7
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

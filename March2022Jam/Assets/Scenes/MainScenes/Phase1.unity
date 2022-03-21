@@ -1159,6 +1159,7 @@ MonoBehaviour:
   cameraShake: {fileID: 9076378139713554452}
   duration: 2.6
   magnitude: 0.1
+  modifier: 0.0002
 --- !u!114 &862751003
 MonoBehaviour:
   m_ObjectHideFlags: 0
