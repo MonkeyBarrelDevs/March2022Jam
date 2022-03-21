@@ -24,6 +24,7 @@ public class BossController : MonoBehaviour
     [SerializeField]
     [Range(0,50)]
     public float modifier = 0.0002f;
+    AudioManager audioManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +47,9 @@ public class BossController : MonoBehaviour
             }
             bossAnim.SetTrigger("attack " + attack.ToString());
         }
+        /*if (bossAnim.GetCurrentAnimatorStateInfo(0).IsName("Walk2")) {
+            Footsies();
+        }*/
     }
 
     protected void MovePhaseCheck(bool isMovingRandomly, bool isChasingPlayer)
@@ -74,6 +78,7 @@ public class BossController : MonoBehaviour
         moveTowardsPlayer = gameObject.GetComponent<AIDestinationSetter>();
         selector = GetComponent<AttackSelection>();
         bossAnim = GetComponent<Animator>();
+        audioManager = GetComponent<AudioManager>();
 
     }
 
@@ -112,4 +117,8 @@ public class BossController : MonoBehaviour
      private void Rumble() {
         StartCoroutine(cameraShake.Shake(duration, magnitude, modifier));
     }
+
+    /*private void Footsies() {
+        audioManager.Play("KnightWalk");
+    }*/
 }

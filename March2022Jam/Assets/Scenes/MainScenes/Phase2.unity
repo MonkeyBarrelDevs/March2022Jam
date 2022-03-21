@@ -133,6 +133,71 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8061632129745883044, guid: 681f563ef34978248a52ed8d8ff511e9, type: 3}
   m_PrefabInstance: {fileID: 504979363}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &187322971
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2568708900020796269, guid: 6d7652feb2ce66f42977bae35c929572, type: 3}
+      propertyPath: m_Name
+      value: CameraRig
+      objectReference: {fileID: 0}
+    - target: {fileID: 2568708900020796270, guid: 6d7652feb2ce66f42977bae35c929572, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2568708900020796270, guid: 6d7652feb2ce66f42977bae35c929572, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2568708900020796270, guid: 6d7652feb2ce66f42977bae35c929572, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2568708900020796270, guid: 6d7652feb2ce66f42977bae35c929572, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2568708900020796270, guid: 6d7652feb2ce66f42977bae35c929572, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2568708900020796270, guid: 6d7652feb2ce66f42977bae35c929572, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2568708900020796270, guid: 6d7652feb2ce66f42977bae35c929572, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2568708900020796270, guid: 6d7652feb2ce66f42977bae35c929572, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2568708900020796270, guid: 6d7652feb2ce66f42977bae35c929572, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2568708900020796270, guid: 6d7652feb2ce66f42977bae35c929572, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2568708900020796270, guid: 6d7652feb2ce66f42977bae35c929572, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2568708900020796271, guid: 6d7652feb2ce66f42977bae35c929572, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1602858257}
+    - target: {fileID: 2568708900020796271, guid: 6d7652feb2ce66f42977bae35c929572, type: 3}
+      propertyPath: laziness
+      value: 25
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6d7652feb2ce66f42977bae35c929572, type: 3}
 --- !u!4 &192572880 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8061632129745883044, guid: 681f563ef34978248a52ed8d8ff511e9, type: 3}
@@ -396,7 +461,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transitionByMusic: 1
-  musicLength: 154
+  musicLength: 3
   pauseMenu: {fileID: 1390774015}
   loader: {fileID: 2077758552}
   respawnDelay: 0.25
@@ -919,6 +984,14 @@ PrefabInstance:
       propertyPath: m_RefResolutionY
       value: 1440
       objectReference: {fileID: 0}
+    - target: {fileID: 9076378140012291301, guid: 81df75eb5ad78e94a86f84c8e2652119, type: 3}
+      propertyPath: m_Name
+      value: Disabled Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 9076378140012291301, guid: 81df75eb5ad78e94a86f84c8e2652119, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9076378140012291302, guid: 81df75eb5ad78e94a86f84c8e2652119, type: 3}
       propertyPath: orthographic size
       value: 11.25
@@ -1050,6 +1123,7 @@ MonoBehaviour:
   - 3
   - 1.5
   delayTimer: 3
+  deathPanLaziness: 25
   isMovingRandomly: 1
   isChasingPlayer: 0
   cameraShake: {fileID: 1946561582}
@@ -1187,7 +1261,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d791a229ee36ef742878a1c4db238849, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3246,6 +3320,22 @@ MonoBehaviour:
     SpatialBlend: 0
     MaxDistance: 0
     loop: 0
+    source: {fileID: 0}
+  - name: KnightDeath
+    clip: {fileID: 8300000, guid: e484b1c66a19fc44eb8bc2185470eee1, type: 3}
+    volume: 1
+    pitch: 1
+    SpatialBlend: 0
+    MaxDistance: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: KnightWalk
+    clip: {fileID: 8300000, guid: a9a596556bee00840a4f6f2dc05df871, type: 3}
+    volume: 1
+    pitch: 1
+    SpatialBlend: 0
+    MaxDistance: 0
+    loop: 1
     source: {fileID: 0}
 --- !u!114 &5929550135406883102
 MonoBehaviour:
