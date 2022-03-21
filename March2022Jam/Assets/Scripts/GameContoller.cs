@@ -31,7 +31,7 @@ public class GameContoller : MonoBehaviour
     {
         if (iFrameTime <= 0)
         {
-            //audioManager.Play("Hurt");
+            audioManager.Play("Hit");
             HP -= number;
             iFrameTime = invulerabilityTime;
         }
