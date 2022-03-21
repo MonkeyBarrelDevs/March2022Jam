@@ -7,6 +7,7 @@ public class BossController : MonoBehaviour
 {
     [SerializeField] float[] attackDelays;
     [SerializeField] float delayTimer = 5f;
+    [SerializeField] float deathPanLaziness = 25f;
     protected RandomDestinationSetter moveRandomly;
     protected AIDestinationSetter moveTowardsPlayer;
     private AttackSelection selector;
@@ -97,6 +98,9 @@ public class BossController : MonoBehaviour
     public void Stagger() 
     {
         bossAnim.SetTrigger("Stagger");
+        dg_simpleCamFollow cam = FindObjectOfType<dg_simpleCamFollow>();
+        cam.laziness = deathPanLaziness;
+        cam.target = transform;
     }
 
     public void StaggerTransition() 
