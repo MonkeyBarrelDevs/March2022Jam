@@ -16,19 +16,19 @@ MonoBehaviour:
   m_UseOnlyAlpha: 0
   m_TrailColor:
     serializedVersion: 2
-    key0: {r: 0.36862746, g: 1, b: 0.36862746, a: 1}
-    key1: {r: 0.972549, g: 1, b: 0.5058824, a: 0}
-    key2: {r: 1, g: 0.34509805, b: 0.34509805, a: 0}
-    key3: {r: 1, g: 0.25490198, b: 1, a: 0}
-    key4: {r: 0.3254902, g: 0.35686275, b: 1, a: 0}
+    key0: {r: 0.30588236, g: 0.5882353, b: 1, a: 1}
+    key1: {r: 0.98039216, g: 0.25490198, b: 0.69411767, a: 0}
+    key2: {r: 0.9245283, g: 0.9245283, b: 0.9245283, a: 0}
+    key3: {r: 0.9245283, g: 0.9245283, b: 0.9245283, a: 0}
+    key4: {r: 0, g: 0.67058825, b: 1, a: 0}
     key5: {r: 0, g: 0.67058825, b: 1, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 0
-    ctime1: 13107
-    ctime2: 26214
-    ctime3: 39321
-    ctime4: 52428
+    ctime0: 22745
+    ctime1: 39707
+    ctime2: 65535
+    ctime3: 65535
+    ctime4: 65535
     ctime5: 65535
     ctime6: 0
     ctime7: 0
@@ -41,13 +41,13 @@ MonoBehaviour:
     atime6: 0
     atime7: 0
     m_Mode: 0
-    m_NumColorKeys: 6
+    m_NumColorKeys: 3
     m_NumAlphaKeys: 2
   m_TrailElementDurationCondition: 0
   m_TrailMaxLength: 10
-  m_TrailDuration: 0.7
+  m_TrailDuration: 0.5
   m_TrailElementSpawnCondition: 0
-  m_TimeBetweenSpawns: 0.04
+  m_TimeBetweenSpawns: 0.05
   m_FramesBetweenSpawns: 0
   m_DistanceBetweenSpawns: 0.225
   m_DistanceCorrection: 1
