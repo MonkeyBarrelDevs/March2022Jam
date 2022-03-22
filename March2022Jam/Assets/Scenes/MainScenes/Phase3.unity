@@ -1715,6 +1715,38 @@ MonoBehaviour:
   m_SortingLayerID: 0
   m_OrderInSortingLayer: 0
   m_DisabledElementsInTrail: []
+--- !u!1 &1279859696
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1279859697}
+  m_Layer: 0
+  m_Name: SwordSweepOffest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1279859697
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279859696}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4242954284726860760}
+  m_Father: {fileID: 8695272783607163747}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1325706064
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2561,7 +2593,7 @@ MonoBehaviour:
   radius: 1.94
   height: 2
   canMove: 1
-  maxSpeed: 3
+  maxSpeed: 2.75
   gravity: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2
@@ -2615,7 +2647,7 @@ MonoBehaviour:
   attackDelays:
   - 2
   - 1.2
-  - 1.5
+  - 4
   - 1.5
   - 1
   delayTimer: 3
@@ -2700,11 +2732,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transitionByMusic: 1
-  musicLength: 129
+  musicLength: 124
   pauseMenu: {fileID: 0}
   loader: {fileID: 821029954}
   respawnDelay: 0.25
-  invulerabilityTime: 0.5
+  invulerabilityTime: 1
   player: {fileID: 1065111647}
   boss: {fileID: 3090083869867742062}
   HP: 3
@@ -2742,15 +2774,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4242954284726860767}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4242954284970870170}
-  m_Father: {fileID: 8695272783607163747}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 1279859697}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!95 &4242954284726860761
 Animator:
   serializedVersion: 4
@@ -2782,6 +2814,7 @@ GameObject:
   - component: {fileID: 4242954284726860760}
   - component: {fileID: 4242954284726860761}
   - component: {fileID: 1269062416599459736}
+  - component: {fileID: 4242954284726860768}
   m_Layer: 0
   m_Name: SweepAttack2
   m_TagString: Untagged
@@ -2789,6 +2822,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &4242954284726860768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4242954284726860767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7460a5aa70a711a48ac1ec5efc4110ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Sweep
+    clip: {fileID: 8300000, guid: affe5f3875eaf464c9c019446bf1d8f8, type: 3}
+    volume: 1
+    pitch: 1
+    SpatialBlend: 0
+    MaxDistance: 0
+    loop: 0
+    source: {fileID: 0}
 --- !u!1 &4242954284970870169
 GameObject:
   m_ObjectHideFlags: 0
@@ -2980,7 +3034,7 @@ Transform:
   - {fileID: 4371589211153328571}
   - {fileID: 4371589211359765074}
   m_Father: {fileID: 8695272783607163747}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4371589210697428213
 GameObject:
@@ -3204,7 +3258,7 @@ Transform:
   - {fileID: 4966210182940658709}
   - {fileID: 4966210182098388371}
   m_Father: {fileID: 8695272783607163747}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4966210182098388368
 GameObject:
@@ -3493,9 +3547,9 @@ Transform:
   m_Children:
   - {fileID: 8695272782049400100}
   - {fileID: 3090083869226266954}
-  - {fileID: 4371589210697428212}
   - {fileID: 4966210181172644435}
-  - {fileID: 4242954284726860760}
+  - {fileID: 4371589210697428212}
+  - {fileID: 1279859697}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3604,7 +3658,7 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: Sweep
-    clip: {fileID: 8300000, guid: 3c7b96c1cdaa786449b59f73bb025c5a, type: 3}
+    clip: {fileID: 8300000, guid: affe5f3875eaf464c9c019446bf1d8f8, type: 3}
     volume: 1
     pitch: 1
     SpatialBlend: 0

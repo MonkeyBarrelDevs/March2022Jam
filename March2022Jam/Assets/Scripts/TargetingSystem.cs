@@ -14,6 +14,6 @@ public class TargetingSystem : MonoBehaviour
     private void TargetPlayer()
     {
         Vector2 direction = playerTransform.position - transform.position;
-        transform.rotation = Quaternion.FromToRotation(Vector3.up, direction);
+        transform.localRotation = Quaternion.FromToRotation(Vector3.up, direction);
     }
 }

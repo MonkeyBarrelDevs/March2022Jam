@@ -16,14 +16,9 @@ public class AttackSelection : MonoBehaviour
         audioManager = GetComponent<AudioManager>();
     }
 
-    private void Update()
-    {
-        
-    }
-
     public int ChooseAttack()
     {
-        int attackIndex = PickAttack();
+        int attackIndex = orbitalsOut ? PickAttack() : 1;
         while (orbitalsOut && attackIndex == 1){
             attackIndex = PickAttack();
         }
@@ -49,6 +44,7 @@ public class AttackSelection : MonoBehaviour
         return -1;
     }
 
+    // order of the attacks
     private void PickSound(int index) {
         switch (index) {
             case 0: // Spiral
@@ -61,7 +57,7 @@ public class AttackSelection : MonoBehaviour
                 //audioManager.Play("BeamAttack");
                 return;
             case 3: // Sweep
-                audioManager.Play("Sweep");
+                //audioManager.Play("Sweep");
                 return;
             case 4: // Tracker
                 audioManager.Play("Tracker");

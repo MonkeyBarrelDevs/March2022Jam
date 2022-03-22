@@ -462,11 +462,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transitionByMusic: 1
-  musicLength: 154
+  musicLength: 149
   pauseMenu: {fileID: 1390774015}
   loader: {fileID: 2077758552}
   respawnDelay: 0.25
-  invulerabilityTime: 0.5
+  invulerabilityTime: 1
   player: {fileID: 1602858264}
   boss: {fileID: 862750999}
   HP: 3
@@ -1162,8 +1162,8 @@ MonoBehaviour:
   attackDelays:
   - 5
   - 3
+  - 3.75
   - 3
-  - 1.5
   delayTimer: 3
   deathPanLaziness: 25
   isMovingRandomly: 1
@@ -1464,6 +1464,38 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3042838323901038958, guid: 55a43f69866d4af47bc108c9db53ce3d, type: 3}
   m_PrefabInstance: {fileID: 1962240274}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1166348943
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1166348944}
+  m_Layer: 0
+  m_Name: SwordSweepOffset
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1166348944
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1166348943}
+  m_LocalRotation: {x: 0, y: 0, z: -0.8191521, w: 0.57357645}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 473631494987096819}
+  m_Father: {fileID: 5929550135406883098}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -110}
 --- !u!1 &1176513795
 GameObject:
   m_ObjectHideFlags: 0
@@ -2553,6 +2585,7 @@ GameObject:
   - component: {fileID: 473631494987096819}
   - component: {fileID: 473631494987096818}
   - component: {fileID: 5190401673405932891}
+  - component: {fileID: 5190401673405932892}
   m_Layer: 0
   m_Name: SweepAttack1
   m_TagString: Untagged
@@ -2587,14 +2620,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 473631494987096816}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 473631494296997331}
-  m_Father: {fileID: 5929550135406883098}
-  m_RootOrder: 4
+  m_Father: {fileID: 1166348944}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &473631495068478936
 Transform:
@@ -2936,7 +2969,7 @@ Transform:
   - {fileID: 965092832018542549}
   - {fileID: 965092831920665246}
   m_Father: {fileID: 5929550135406883098}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1165132917155757088
 MonoBehaviour:
@@ -3016,7 +3049,7 @@ Transform:
   - {fileID: 2526799789732169464}
   - {fileID: 2526799787939474887}
   m_Father: {fileID: 5929550135406883098}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &2526799788472788923
 Animator:
@@ -3208,7 +3241,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2986376793898913195}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d8edf2d55ca588547881b7472e926510, type: 3}
   m_Name: 
@@ -3250,6 +3283,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 255574b034fbaad41837693f23494137, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5190401673405932892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473631494987096816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7460a5aa70a711a48ac1ec5efc4110ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Sweep
+    clip: {fileID: 8300000, guid: affe5f3875eaf464c9c019446bf1d8f8, type: 3}
+    volume: 1
+    pitch: 1
+    SpatialBlend: 0
+    MaxDistance: 0
+    loop: 0
+    source: {fileID: 0}
 --- !u!1 &5929550135406883097
 GameObject:
   m_ObjectHideFlags: 0
@@ -3292,9 +3346,9 @@ Transform:
   m_Children:
   - {fileID: 5929550137002053469}
   - {fileID: 1504209715}
-  - {fileID: 965092832683386661}
   - {fileID: 2526799788472788922}
-  - {fileID: 473631494987096819}
+  - {fileID: 965092832683386661}
+  - {fileID: 1166348944}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3371,7 +3425,7 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: Sweep
-    clip: {fileID: 8300000, guid: 3c7b96c1cdaa786449b59f73bb025c5a, type: 3}
+    clip: {fileID: 8300000, guid: affe5f3875eaf464c9c019446bf1d8f8, type: 3}
     volume: 1
     pitch: 1
     SpatialBlend: 0

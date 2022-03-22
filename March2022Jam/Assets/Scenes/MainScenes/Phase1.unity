@@ -579,11 +579,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transitionByMusic: 1
-  musicLength: 133
+  musicLength: 128
   pauseMenu: {fileID: 1390774015}
   loader: {fileID: 2077758552}
   respawnDelay: 0.25
-  invulerabilityTime: 0.5
+  invulerabilityTime: 1
   player: {fileID: 3592959161873334891}
   boss: {fileID: 862750999}
   HP: 3
