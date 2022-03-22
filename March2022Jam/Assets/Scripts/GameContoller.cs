@@ -124,6 +124,7 @@ public class GameContoller : MonoBehaviour
     IEnumerator StaggerAfterSong(float delay)
     {
         yield return new WaitForSeconds(delay);
+        iFrameTime = Mathf.Infinity;
         boss.Stagger();
     }
 
