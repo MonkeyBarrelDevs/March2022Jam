@@ -64,6 +64,7 @@ GameObject:
   - component: {fileID: 6795974678078669435}
   - component: {fileID: 6795974678078669432}
   - component: {fileID: 6795974678078669408}
+  - component: {fileID: 4760536824209368360}
   m_Layer: 0
   m_Name: PP Camera
   m_TagString: MainCamera
@@ -205,3 +206,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36a0b2c04a562ae48a523b275ae31294, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4760536824209368360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6795974678078669434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f708216f367d64d4aa511502dac7f3dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Pipeline: {fileID: 11400000, guid: 6386748685a815d48873f9d18d9ec9b0, type: 2}
+  m_Feature: {fileID: 2473353235496497644, guid: 48246057adb033d4d9a78c29cd244b5f, type: 2}
+  m_MatFunc: {fileID: 2100000, guid: 11d3a96059865b74bb677b6568517b40, type: 2}
+  m_MatPostPro: {fileID: 2100000, guid: d6013acb75e222640955693ec91a386d, type: 2}
+  m_CurrPreset: 2
+  m_BlurSize: 0.23
+  m_BlurStrength: 0.284
+  m_BleedingSize: 1.026
+  m_BleedingStrength: 0.742
+  m_ChromaticAberrationOffset: -0.18
+  m_RGBMaskIntensivity: 0.479
+  m_RGBMaskStrength: 0.6
+  m_RGBMaskBleeding: 0.1
+  m_ColorNoiseMode: 0
+  m_ColorNoiseStrength: 0.244
+  m_WhiteNoiseMode: 1
+  m_WhiteNoiseStrength: 0.23
+  m_DarkestLevel: {r: 0, g: 0, b: 0, a: 1}
+  m_BrightestLevel: {r: 1, g: 1, b: 1, a: 1}
+  m_DarkestColor: {r: 0.15686275, g: 0.15686275, b: 0.15686275, a: 1}
+  m_BrightestColor: {r: 1, g: 1, b: 1, a: 1}
+  m_Brightness: -0.304
+  m_Contrast: -0.34
+  m_Saturation: -0.642
+  m_InterferenceWidth: 25
+  m_InterferenceSpeed: 3
+  m_InterferenceStrength: 0
+  m_InterferenceSplit: 0.25
+  m_CurvatureX: 0.014
+  m_CurvatureY: 0.014
+  m_Overscan: 0
+  m_VignetteSize: 0.216
+  m_VignetteStrength: 0.066
+  m_TurnOff: 0
+  m_BgColor: {r: 0.0859, g: 0.0937, b: 0.1328, a: 1}
+  m_LineAmount: 0.065
+  m_LineSpeed: 0.01

@@ -8,34 +8,24 @@ namespace RetroGameEffects.CRT
 	{
 		public class Pass : ScriptableRenderPass
 		{
-			Material m_MatFunc;
-			Material m_MatPostPro;
-			Material m_MatFinal;
-			string m_ProfilerTag;
+			public RenderTargetIdentifier m_Source;
+			public Material m_MatFunc;
+			public Material m_MatPostPro;
+			public bool m_TurnOff = false;
+			public int m_DownsampleScale = 1;
 			RenderTargetIdentifier m_RtID1;
 			RenderTargetIdentifier m_RtID2;
-			RenderTargetIdentifier m_Source;
 			int m_RtPropID1 = 0;
 			int m_RtPropID2 = 0;
-			bool m_TurnOff = false;
 
-			public Pass(string tag)
+			public Pass()
 			{
 				this.renderPassEvent = RenderPassEvent.AfterRenderingTransparents;
-				m_ProfilerTag = tag;
-			}
-			public void Setup(RenderTargetIdentifier source, Material matBlur, Material matPostPro, Material matFinal, bool turnOff)
-			{
-				m_Source = source;
-				m_MatFunc = matBlur;
-				m_MatPostPro = matPostPro;
-				m_MatFinal = matFinal;
-				m_TurnOff = turnOff;
 			}
 			public override void Configure(CommandBuffer cmd, RenderTextureDescriptor cameraTextureDescriptor)
 			{
-				int width = cameraTextureDescriptor.width;
-				int height = cameraTextureDescriptor.height;
+				int width = cameraTextureDescriptor.width / m_DownsampleScale;
+				int height = cameraTextureDescriptor.height / m_DownsampleScale;
 
 				m_RtPropID1 = Shader.PropertyToID("tmpRT1");
 				m_RtPropID2 = Shader.PropertyToID("tmpRT2");
@@ -48,7 +38,7 @@ namespace RetroGameEffects.CRT
 			}
 			public override void Execute(ScriptableRenderContext context, ref RenderingData renderingData)
 			{
-				CommandBuffer cmd = CommandBufferPool.Get(m_ProfilerTag);
+				CommandBuffer cmd = CommandBufferPool.Get("CRTFeature");
 				cmd.Blit(m_Source, m_RtID1, m_MatFunc, 0);
 
 				cmd.SetGlobalTexture("_BlurTex", m_RtID1);
@@ -57,12 +47,12 @@ namespace RetroGameEffects.CRT
 				{
 					cmd.Blit(m_RtID2, m_RtID1, m_MatFunc, 1);
 					cmd.Blit(m_RtID1, m_RtID2, m_MatFunc, 2);
-					cmd.Blit(m_RtID2, m_Source, m_MatFinal);
+					cmd.Blit(m_RtID2, m_Source, m_MatFunc, 3);
 				}
 				else
 				{
 					cmd.Blit(m_RtID2, m_RtID1, m_MatFunc, 2);
-					cmd.Blit(m_RtID1, m_Source, m_MatFinal);
+					cmd.Blit(m_RtID1, m_Source, m_MatFunc, 3);
 				}
 				context.ExecuteCommandBuffer(cmd);
 				CommandBufferPool.Release(cmd);
@@ -76,24 +66,25 @@ namespace RetroGameEffects.CRT
 		///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		Material m_MatFunc;
 		Material m_MatPostPro;
-		Material m_MatFinal;
 		Pass m_Pass;
 		bool m_TurnOff;
 		public override void Create()
 		{
-			m_Pass = new Pass(name);
+			m_Pass = new Pass();
 		}
 		public override void AddRenderPasses(ScriptableRenderer renderer, ref RenderingData renderingData)
 		{
 			RenderTargetIdentifier src = renderer.cameraColorTarget;
-			m_Pass.Setup(src, m_MatFunc, m_MatPostPro, m_MatFinal, m_TurnOff);
+			m_Pass.m_Source = renderer.cameraColorTarget;
+			m_Pass.m_MatFunc = m_MatFunc;
+			m_Pass.m_MatPostPro = m_MatPostPro;
+			m_Pass.m_TurnOff = m_TurnOff;
 			renderer.EnqueuePass(m_Pass);
 		}
-		public void SetupMaterial(Material matFunc, Material matPostPro, Material matFinal)
+		public void SetupMaterial(Material matFunc, Material matPostPro)
 		{
 			m_MatFunc = matFunc;
 			m_MatPostPro = matPostPro;
-			m_MatFinal = matFinal;
 		}
 		public void SetTurnOff(bool enable)
 		{

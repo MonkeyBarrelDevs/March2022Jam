@@ -160,14 +160,12 @@ namespace RetroGameEffects.CRT
 		}
 		public enum Preset { Custom, MiniCRT, ColorTV, OldTV, ArcadeDisplay, BrokenBlackWhite };
 		public enum NoiseMode { Add, Lighten, Darken };
-		public enum MaskMode { Thin, Dense, Denser, ThinScanline, Scanline, DenseScanline };
 
 		[Header("Basic")]
 		public RenderPipelineAsset m_Pipeline;
 		public CRT.CRTFeature m_Feature;
 		public Material m_MatFunc;
 		public Material m_MatPostPro;
-		public Material m_MatFinal;
 		public Preset m_CurrPreset = Preset.OldTV;
 		Preset m_Preset = Preset.Custom;
 		[Header("Blur")]
@@ -198,7 +196,7 @@ namespace RetroGameEffects.CRT
 		[Range(-1f, 1f)] public float m_Contrast =  0.1f;
 		[Range(-1f, 1f)] public float m_Saturation = -0.05f;
 		[Header("Horizontal Interference")]
-		[Range(3, 80)] public float m_InterferenceWidth = 25f;
+		[Range(3, 90)] public float m_InterferenceWidth = 25f;
 		[Range(-25.0f, 25.0f)] public float m_InterferenceSpeed = 3f;
 		[Range(0f, 1f)] public float m_InterferenceStrength = 0f;
 		[Range(0f, 1f)] public float m_InterferenceSplit = 0.25f;
@@ -217,15 +215,15 @@ namespace RetroGameEffects.CRT
 		[Range(0f, 0.02f)] public float m_LineSpeed = 0.01f;
 		//public float m_LineNumber = 150;
 
-		float m_BlurSigma = float.NaN;
-		float[] blurKernel = new float[2];
-		float blurZ = float.NaN;
+		float m_BlurSigma = 0f;
+		float[] m_BlurKernel = new float[2];
+		float m_BlurZ = 0f;
 
-		float m_CurrentBrightness = float.NaN;
+		float m_CurrentBrightness = 0f;
 		Matrix4x4 m_BrightnessMat = new Matrix4x4();
-		float m_CurrentContrast = float.NaN;
+		float m_CurrentContrast = 0f;
 		Matrix4x4 m_ContrastMat = new Matrix4x4();
-		float m_CurrentSaturation = float.NaN;
+		float m_CurrentSaturation = 0f;
 		Matrix4x4 m_SaturationMat = new Matrix4x4();
 		Matrix4x4 m_ColorMat = new Matrix4x4();
 
@@ -233,7 +231,7 @@ namespace RetroGameEffects.CRT
 		{
 			if (m_Pipeline != null)
 				GraphicsSettings.renderPipelineAsset = m_Pipeline;
-			m_Feature.SetupMaterial(m_MatFunc, m_MatPostPro, m_MatFinal);
+			m_Feature.SetupMaterial(m_MatFunc, m_MatPostPro);
 		}
 		void Update()
 		{
@@ -275,8 +273,8 @@ namespace RetroGameEffects.CRT
 			float saturation = Mathf.Lerp(0.0f, 2.0f, (m_Saturation + 1f) / 2f);
 			UpdateColorMatrices(brightness - 1.5f, contrast, saturation);
 
-			m_MatFunc.SetVector("_BlurKernel", new Vector4(blurKernel[0], blurKernel[1]));
-			m_MatFunc.SetFloat("_BlurZ", blurZ);
+			m_MatFunc.SetVector("_BlurKernel", new Vector4(m_BlurKernel[0], m_BlurKernel[1]));
+			m_MatFunc.SetFloat("_BlurZ", m_BlurZ);
 			m_MatFunc.SetColor("_BgColor", m_BgColor);
 			m_MatFunc.SetFloat("_LineAmount", m_LineAmount);
 			m_MatFunc.SetFloat("_Speed", m_LineSpeed);
@@ -307,11 +305,11 @@ namespace RetroGameEffects.CRT
 			float realCurvatureX = Mathf.Lerp(0.25f, 0.45f, m_CurvatureX);
 			float realCurvatureY = Mathf.Lerp(0.25f, 0.45f, m_CurvatureY);
 
-			m_MatFinal.SetFloat("_VignetteStr", m_VignetteStrength);
-			m_MatFinal.SetFloat("_VignetteSize", 1f - m_VignetteSize);
-			m_MatFinal.SetFloat("_CrtBendX", Mathf.Lerp(1f, 100f, (1f - realCurvatureX) / Mathf.Exp(10f * realCurvatureX)));
-			m_MatFinal.SetFloat("_CrtBendY", Mathf.Lerp(1f, 100f, (1f - realCurvatureY) / Mathf.Exp(10f * realCurvatureY)));
-			m_MatFinal.SetFloat("_CrtOverscan", Mathf.Lerp(0f, 0.25f, m_Overscan));
+			m_MatFunc.SetFloat("_VignetteStr", m_VignetteStrength);
+			m_MatFunc.SetFloat("_VignetteSize", 1f - m_VignetteSize);
+			m_MatFunc.SetFloat("_CrtBendX", Mathf.Lerp(1f, 100f, (1f - realCurvatureX) / Mathf.Exp(10f * realCurvatureX)));
+			m_MatFunc.SetFloat("_CrtBendY", Mathf.Lerp(1f, 100f, (1f - realCurvatureY) / Mathf.Exp(10f * realCurvatureY)));
+			m_MatFunc.SetFloat("_CrtOverscan", Mathf.Lerp(0f, 0.25f, m_Overscan));
 		}
 		float CalculateBlurWeight(float x, float sigma) { return 0.39894f * Mathf.Exp(-0.5f * x * x / (sigma * sigma)) / sigma; }
 		void UpdateBlurKernel(float sigma)
@@ -320,19 +318,17 @@ namespace RetroGameEffects.CRT
 				return;
 
 			m_BlurSigma = sigma;
-			const int kSize = 1;
-
-			blurZ = 0.0f;
-			for(int j = 0; j <= kSize; ++j) {
+			m_BlurZ = 0f;
+			for(int j = 0; j <= 1; ++j) {
 				float normal = CalculateBlurWeight(j, sigma);
-				blurKernel[kSize - j] = normal;
+				m_BlurKernel[1 - j] = normal;
 
 				if(j > 0)
-					blurZ += 2 * normal;
+					m_BlurZ += 2 * normal;
 				else
-					blurZ += normal;
+					m_BlurZ += normal;
 			}
-			blurZ *= blurZ;
+			m_BlurZ *= m_BlurZ;
 		}
 		void UpdateColorMatrices(float b, float c, float s)
 		{

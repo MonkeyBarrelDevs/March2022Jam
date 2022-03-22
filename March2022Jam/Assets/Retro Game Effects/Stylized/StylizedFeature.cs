@@ -12,16 +12,14 @@ namespace RetroGameEffects.Stylized
 			Three = 2,
 		}
 		public enum EBlendMode {
-			Overlay = 0,
-			AlphaBlend = 1,
+			Overlay = 4,
+			AlphaBlend = 5,
 		}
 		///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		public class Pass : ScriptableRenderPass
 		{
-			Material m_MatBCS;
-			Material m_MatBlendMode;
+			Material m_Mat;
 			EBlendMode m_BlendMode;
-			string m_ProfilerTag;
 			RenderTargetIdentifier m_RtID1;
 			RenderTargetIdentifier m_RtID2;
 			RenderTargetIdentifier m_RtID3;
@@ -31,16 +29,14 @@ namespace RetroGameEffects.Stylized
 			int m_RtPropID3 = 0;
 			EDrawStyle m_Style;
 
-			public Pass(string tag)
+			public Pass()
 			{
 				this.renderPassEvent = RenderPassEvent.AfterRenderingTransparents;
-				m_ProfilerTag = tag;
 			}
-			public void Setup(RenderTargetIdentifier source, Material matBCS, Material matBlendMode, EBlendMode mode, EDrawStyle style)
+			public void Setup(RenderTargetIdentifier source, Material mat, EBlendMode mode, EDrawStyle style)
 			{
 				m_Source = source;
-				m_MatBCS = matBCS;
-				m_MatBlendMode = matBlendMode;
+				m_Mat = mat;
 				m_BlendMode = mode;
 				m_Style = style;
 			}
@@ -64,14 +60,14 @@ namespace RetroGameEffects.Stylized
 			}
 			public override void Execute(ScriptableRenderContext context, ref RenderingData renderingData)
 			{
-				CommandBuffer cmd = CommandBufferPool.Get(m_ProfilerTag);
+				CommandBuffer cmd = CommandBufferPool.Get("StylizedFeature");
 
-				cmd.Blit(m_Source, m_RtID1, m_MatBCS, 0);
+				cmd.Blit(m_Source, m_RtID1, m_Mat, 0);
 				if (m_Style == EDrawStyle.One)
-					cmd.Blit(m_RtID1, m_RtID2, m_MatBCS, 3);
+					cmd.Blit(m_RtID1, m_RtID2, m_Mat, 3);
 				if (m_Style == EDrawStyle.Two || m_Style == EDrawStyle.Three)
-					cmd.Blit(m_RtID1, m_RtID2, m_MatBCS, 1);
-				cmd.Blit(m_RtID1, m_RtID3, m_MatBCS, 2);
+					cmd.Blit(m_RtID1, m_RtID2, m_Mat, 1);
+				cmd.Blit(m_RtID1, m_RtID3, m_Mat, 2);
 				cmd.SetGlobalTexture("_OverlayTex", m_RtID3);
 
 //cmd.Blit(m_RtID1, m_Source);
@@ -82,7 +78,7 @@ namespace RetroGameEffects.Stylized
 //CommandBufferPool.Release(cmd);
 //return;
 
-				cmd.Blit(m_RtID2, m_Source, m_MatBlendMode, (int)m_BlendMode);
+				cmd.Blit(m_RtID2, m_Source, m_Mat, (int)m_BlendMode);
 				context.ExecuteCommandBuffer(cmd);
 				CommandBufferPool.Release(cmd);
 			}
@@ -94,36 +90,34 @@ namespace RetroGameEffects.Stylized
 			}
 		}
 		///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-		Material m_MatBCS;
-		Material m_MatBlend;
-		EDrawStyle m_Style = EDrawStyle.One;
-		EBlendMode m_BlendMode = EBlendMode.AlphaBlend;
+		public Material m_Mat;
+		public EDrawStyle m_Style = EDrawStyle.One;
+		public EBlendMode m_BlendMode = EBlendMode.AlphaBlend;
 		Pass m_Pass;
 
 		public override void Create()
 		{
-			m_Pass = new Pass(name);
+			m_Pass = new Pass();
 		}
 		public override void AddRenderPasses(ScriptableRenderer renderer, ref RenderingData renderingData)
 		{
-			if (m_MatBCS == null || m_MatBlend == null)
+			if (m_Mat == null)
 			{
 				Debug.LogWarningFormat("Missing material. {0} pass will not execute. Check for missing reference in the assigned renderer.", GetType().Name);
 				return;
 			}
 			RenderTargetIdentifier src = renderer.cameraColorTarget;
-			m_Pass.Setup(src, m_MatBCS, m_MatBlend, m_BlendMode, m_Style);
+			m_Pass.Setup(src, m_Mat, m_BlendMode, m_Style);
 			renderer.EnqueuePass(m_Pass);
 		}
-		public void SteupMaterials(Material matBCS, Material matBlend)
+		/*public void SteupMaterials(Material matBCS, Material matBlend)
 		{
 			m_MatBCS = matBCS;
-			m_MatBlend = matBlend;
 		}
 		public void SetupParameters(EDrawStyle style, EBlendMode blend)
 		{
 			m_Style = style;
 			m_BlendMode = blend;
-		}
+		}*/
 	}
 }

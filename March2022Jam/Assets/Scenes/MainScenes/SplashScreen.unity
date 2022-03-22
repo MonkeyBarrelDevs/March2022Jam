@@ -548,6 +548,14 @@ PrefabInstance:
       propertyPath: m_ReferencePixelsPerUnit
       value: 64
       objectReference: {fileID: 0}
+    - target: {fileID: 5039938019871693969, guid: d84c4f75000f2834b800d28e9387c049, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 682605879}
+    - target: {fileID: 5039938019871693969, guid: d84c4f75000f2834b800d28e9387c049, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5039938021369142084, guid: d84c4f75000f2834b800d28e9387c049, type: 3}
       propertyPath: m_Name
       value: Level Loader

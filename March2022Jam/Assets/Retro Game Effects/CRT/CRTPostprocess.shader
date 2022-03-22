@@ -29,10 +29,10 @@
 
 			half4 alphaBlend (half4 top, half4 bottom)
 			{
-				half4 result;
-				result.a   = top.a + bottom.a * (1.0 - top.a);
-				result.rgb = (top.rgb * top.aaa + bottom.rgb * bottom.aaa * (half3(1.0, 1.0, 1.0) - top.aaa)) / result.aaa;
-				return result;
+				half4 c;
+				c.a   = top.a + bottom.a * (1.0 - top.a);
+				c.rgb = (top.rgb * top.aaa + bottom.rgb * bottom.aaa * (1.0 - top.aaa)) / c.aaa;
+				return c;
 			}
 			half4 blur (float2 uv)
 			{
@@ -73,17 +73,17 @@
 				screen = saturate(screen);
 				return screen;
 			}
-			half4 frag (v2f_img i) : SV_Target
+			half4 frag (v2f_img input) : SV_Target
 			{
-				half4 base    = tex2D(_MainTex, i.uv);
-				half4 blured  = blur(i.uv);
-				half4 bleeded = bleed(i.uv);
-				half4 final;
+				float2 uv = input.uv;
+				half4 base    = tex2D(_MainTex, uv);
+				half4 blured  = blur(uv);
+				half4 bleeded = bleed(uv);
+				half4 final = half4(0, 0, 0, 1);
 
 				float dtw = _MainTex_TexelSize.x;
 				float dth = _MainTex_TexelSize.y;
 
-				final.a = 1;
 				half3 tmp;
 
 				// 1. mix tmp with blured in lighten mode
@@ -98,9 +98,9 @@
 
 				// 3. add color noise
 				half3 colorNoise = half3(
-					noise(sin(i.uv.x / dtw) * i.uv.y / dth + delta), 
-					noise(sin(i.uv.y / dth) * i.uv.x / dtw + delta),
-					noise(sin(i.uv.x / dtw) * sin(i.uv.y / dth) + delta));
+					noise(sin(uv.x / dtw) * uv.y / dth + delta), 
+					noise(sin(uv.y / dth) * uv.x / dtw + delta),
+					noise(sin(uv.x / dtw) * sin(uv.y / dth) + delta));
 
 				if (_ColorNoiseMode == 0)
 					tmp = final.rgb + colorNoise;
@@ -111,7 +111,7 @@
 				final.rgb = alphaBlend(half4(tmp, _ColorNoiseStr), final).rgb;
 
 				// 4. add monochromatic noise
-				float monoNoise = noise(sin(i.uv.x / dtw) * i.uv.y / dth + delta);
+				float monoNoise = noise(sin(uv.x / dtw) * uv.y / dth + delta);
 
 				if (_MonoNoiseMode == 0)
 					tmp = final.rgb + monoNoise;
@@ -124,7 +124,7 @@
 				final.rgb = alphaBlend(half4(tmp, _MonoNoiseStr), final).rgb;
 
 				// 5. mix rgb mask with final
-				float modulo = floor(fmod(i.uv.x / dtw, 3));
+				float modulo = floor(fmod(uv.x / dtw, 3));
 				tmp = final.rgb;
 
 				if (modulo == 0)
@@ -137,7 +137,7 @@
 				final.rgb = alphaBlend(half4(tmp, _RgbMaskStr), final).rgb;
 
 				// 6. interference
-				final.rgb = interference(i.uv, final.rgb);
+				final.rgb = interference(uv, final.rgb);
 
 				// 7. color adjustment
 				final = mul(_ColorMat, final);

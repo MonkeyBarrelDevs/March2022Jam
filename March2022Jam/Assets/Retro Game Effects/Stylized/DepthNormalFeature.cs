@@ -13,13 +13,13 @@ namespace RetroGameEffects.Stylized
 
 			Material m_Mat = null;
 			FilteringSettings m_FilteringSettings;
-			string m_ProfilerTag = "DepthNormals Prepass";
 			ShaderTagId m_ShaderTagId = new ShaderTagId("DepthOnly");
 
-			public Pass(RenderQueueRange renderQueueRange, LayerMask layerMask, Material material)
+			public Pass(RenderQueueRange renderQueueRange, LayerMask layerMask)
 			{
 				m_FilteringSettings = new FilteringSettings(renderQueueRange, layerMask);
-				m_Mat = material;
+				m_Mat = CoreUtils.CreateEngineMaterial("Hidden/Internal-DepthNormalsTexture");
+				this.renderPassEvent = RenderPassEvent.AfterRenderingPrePasses;
 			}
 			public void Setup(RenderTextureDescriptor baseDescriptor, RenderTargetHandle depthAttachmentHandle)
 			{
@@ -36,13 +36,12 @@ namespace RetroGameEffects.Stylized
 			}
 			public override void Execute(ScriptableRenderContext context, ref RenderingData renderingData)
 			{
-				CommandBuffer cmd = CommandBufferPool.Get(m_ProfilerTag);
+				CommandBuffer cmd = CommandBufferPool.Get("DepthNormals Prepass");
 				{
 					context.ExecuteCommandBuffer(cmd);
 					cmd.Clear();
 
-					var sortFlags = renderingData.cameraData.defaultOpaqueSortFlags;
-					var drawSettings = CreateDrawingSettings(m_ShaderTagId, ref renderingData, sortFlags);
+					var drawSettings = CreateDrawingSettings(m_ShaderTagId, ref renderingData, renderingData.cameraData.defaultOpaqueSortFlags);
 					drawSettings.perObjectData = PerObjectData.None;
 
 					ref CameraData data = ref renderingData.cameraData;
@@ -60,23 +59,16 @@ namespace RetroGameEffects.Stylized
 			}
 			public override void FrameCleanup(CommandBuffer cmd)
 			{
-				if (depthAttachmentHandle != RenderTargetHandle.CameraTarget)
-				{
-					cmd.ReleaseTemporaryRT(depthAttachmentHandle.id);
-					depthAttachmentHandle = RenderTargetHandle.CameraTarget;
-				}
+				cmd.ReleaseTemporaryRT(depthAttachmentHandle.id);
 			}
 		}
 
 		Pass m_Pass;
 		RenderTargetHandle m_RtDepthNormals;
-		Material m_Mat;
 
 		public override void Create()
 		{
-			m_Mat = CoreUtils.CreateEngineMaterial("Hidden/Internal-DepthNormalsTexture");
-			m_Pass = new Pass(RenderQueueRange.opaque, -1, m_Mat);
-			m_Pass.renderPassEvent = RenderPassEvent.AfterRenderingPrePasses;
+			m_Pass = new Pass(RenderQueueRange.opaque, -1);
 			m_RtDepthNormals.Init("_CameraDepthNormalsTexture");
 		}
 		public override void AddRenderPasses(ScriptableRenderer renderer, ref RenderingData renderingData)

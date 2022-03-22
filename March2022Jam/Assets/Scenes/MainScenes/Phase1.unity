@@ -436,7 +436,7 @@ Canvas:
   m_GameObject: {fileID: 318979242}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 1127238891}
   m_PlaneDistance: 100
   m_PixelPerfect: 1
@@ -731,6 +731,14 @@ PrefabInstance:
     - target: {fileID: 5039938019871693968, guid: d84c4f75000f2834b800d28e9387c049, type: 3}
       propertyPath: m_ReferencePixelsPerUnit
       value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039938019871693969, guid: d84c4f75000f2834b800d28e9387c049, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1127238891}
+    - target: {fileID: 5039938019871693969, guid: d84c4f75000f2834b800d28e9387c049, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5039938021369142084, guid: d84c4f75000f2834b800d28e9387c049, type: 3}
       propertyPath: m_Name
@@ -1516,10 +1524,6 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 3592959161873334902}
-    - target: {fileID: 2568708900020796271, guid: 6d7652feb2ce66f42977bae35c929572, type: 3}
-      propertyPath: laziness
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d7652feb2ce66f42977bae35c929572, type: 3}
 --- !u!20 &1127238891 stripped
@@ -1814,10 +1818,10 @@ PrefabInstance:
     - target: {fileID: 6989884100534825433, guid: df1e30e511eb4e045904daf181e2699c, type: 3}
       propertyPath: m_Camera
       value: 
-      objectReference: {fileID: 9076378139713554445}
+      objectReference: {fileID: 1127238891}
     - target: {fileID: 6989884100534825433, guid: df1e30e511eb4e045904daf181e2699c, type: 3}
       propertyPath: m_RenderMode
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6989884100534825433, guid: df1e30e511eb4e045904daf181e2699c, type: 3}
       propertyPath: m_PixelPerfect
@@ -2993,11 +2997,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!20 &9076378139713554445 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 9076378140012291302, guid: 81df75eb5ad78e94a86f84c8e2652119, type: 3}
-  m_PrefabInstance: {fileID: 842198251}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &9076378139713554452
 MonoBehaviour:
   m_ObjectHideFlags: 0

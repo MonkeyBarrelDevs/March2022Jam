@@ -70,11 +70,10 @@
 				float2 scaledUV = float2((uv.x - 0.5) * (1.0 - scaleTime) + 0.5, (uv.y - 0.5) / (1.0 - scaleTime) + 0.5);
 
 				float4 tc = tex2D(_MainTex, scaledUV) + float4(scaleTime.xxx, 0.0);
-				float fadeLv = 1.0 - fadeTime;
 				float cropPixel = min(saturate(sign(abs(scaleTime / 2.0 - 0.5) - abs(uv.y - 0.5))),
 					saturate(sign(1.0 - fadeTime - abs(uv.x - 0.5))));
 
-				return lerp(_BgColor, lerp(_BgColor, tc, fadeLv), cropPixel);
+				return lerp(_BgColor, lerp(_BgColor, tc, 1.0 - fadeTime), cropPixel);
 			}
 			ENDCG
 		}
@@ -110,6 +109,55 @@
 				float2 newUv = bulgeUvCoords(uv, 0.2);
 				float4 tc = tex2D(_MainTex, uv);
 				return applyScanlines(tc, newUv, 150.0, _LineAmount, 2.0, _Speed);
+			}
+			ENDCG
+		}
+		Pass {
+			CGPROGRAM
+			#pragma vertex vert_img
+			#pragma fragment frag
+			#include "UnityCG.cginc"
+
+			float _VignetteStr, _VignetteSize;
+			float _CrtBendX, _CrtBendY, _CrtOverscan;
+
+			half4 alphaBlend (half4 top, half4 bottom)
+			{
+				half4 c = 0.0;
+				c.a   = top.a + bottom.a * (1 - top.a);
+				c.rgb = (top.rgb * top.aaa + bottom.rgb * bottom.aaa * (1 - top.aaa)) / c.aaa;
+				return c;
+			}
+			half3 vignette (float2 uv)
+			{
+				float dist = distance(0.5, uv) * 1.414213;   // multiplyed by 1.414213 to fit in the range of 0 to 1
+				return saturate((1.0 - dist) / (1.0 - _VignetteSize)).xxx;
+			}
+			float2 crt (float2 coord, float bendX, float bendY)
+			{
+				coord = (coord - 0.5) * 2 / (_CrtOverscan + 1);  // to symmetrical coords
+
+				// bend
+				coord.x *= 1 + pow((abs(coord.y) / bendX), 3);
+				coord.y *= 1 + pow((abs(coord.x) / bendY), 3);
+
+				coord = (coord / 2) + 0.5;  // transform back to 0~1
+				return coord;
+			}
+			half4 frag (v2f_img input) : SV_Target
+			{
+				float2 uv = crt(input.uv, _CrtBendX, _CrtBendY);
+				if (uv.x < 0 || uv.x > 1 || uv.y < 0 || uv.y > 1)
+				{
+					return half4(0, 0, 0, 1);
+				}
+				else
+				{
+					half4 final = tex2D(_MainTex, uv);
+					half3 tmp = final.rgb * vignette(uv);
+					final.rgb = alphaBlend(half4(tmp, _VignetteStr), final).rgb;
+					return final;
+				}
 			}
 			ENDCG
 		}

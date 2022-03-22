@@ -39,6 +39,20 @@
 			#include "Stylized.cginc"
 			ENDCG
 		}
+		Pass {
+			CGPROGRAM
+			#pragma vertex vert_img
+			#pragma fragment fragOverlay
+			#include "Stylized.cginc"
+			ENDCG
+		}
+		Pass {
+			CGPROGRAM
+			#pragma vertex vert_img
+			#pragma fragment fragAlphaBlend
+			#include "Stylized.cginc"
+			ENDCG
+		}
 	}
 	Fallback Off
 }

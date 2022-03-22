@@ -401,7 +401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9d741b48eaaad348ba3a934de718c6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Speed: 30
+  m_Speed: -30
   m_AxisX: 1
   m_AxisY: 1
   m_AxisZ: 1
@@ -497,7 +497,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9d741b48eaaad348ba3a934de718c6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Speed: 30
+  m_Speed: -20
   m_AxisX: 1
   m_AxisY: 1
   m_AxisZ: 1
@@ -593,7 +593,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9d741b48eaaad348ba3a934de718c6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Speed: 30
+  m_Speed: 20
   m_AxisX: 1
   m_AxisY: 1
   m_AxisZ: 1
@@ -848,10 +848,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Feature: {fileID: -124699725115867681, guid: c17a4c25acc0f0341a590e54c9d22afd,
     type: 2}
-  m_BlendMode: 0
   m_DrawStyle: 0
   m_Mat: {fileID: 2100000, guid: 52585bafcd0cb8e46a6bcd383d6ed4c1, type: 2}
-  m_MatBlend: {fileID: 2100000, guid: c8e857429b0703f44bd34d5f9746c763, type: 2}
   m_Color: {r: 0.73333335, g: 1, b: 0.87058824, a: 1}
   m_Angle: 1.78
   m_Scale: 1
@@ -1049,7 +1047,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9d741b48eaaad348ba3a934de718c6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Speed: 30
+  m_Speed: 60
   m_AxisX: 1
   m_AxisY: 1
   m_AxisZ: 1
@@ -1241,7 +1239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9d741b48eaaad348ba3a934de718c6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Speed: 30
+  m_Speed: 45
   m_AxisX: 1
   m_AxisY: 1
   m_AxisZ: 1
@@ -1337,7 +1335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9d741b48eaaad348ba3a934de718c6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Speed: 30
+  m_Speed: 50
   m_AxisX: 1
   m_AxisY: 1
   m_AxisZ: 1
@@ -1434,7 +1432,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Speed: 30
-  m_AxisX: 1
+  m_AxisX: 0
   m_AxisY: 1
   m_AxisZ: 1
 --- !u!1 &1913624624

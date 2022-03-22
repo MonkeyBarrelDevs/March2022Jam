@@ -50,7 +50,3 @@ MonoBehaviour:
   m_Name: CRTFeature
   m_EditorClassIdentifier: 
   m_Active: 1
-  m_MatBlur: {fileID: 2100000, guid: 11d3a96059865b74bb677b6568517b40, type: 2}
-  m_MatPostPro: {fileID: 2100000, guid: d6013acb75e222640955693ec91a386d, type: 2}
-  m_MatFinal: {fileID: 2100000, guid: c9a63d9440a36684eac816a8b3e739e6, type: 2}
-  m_TurnOff: 1
