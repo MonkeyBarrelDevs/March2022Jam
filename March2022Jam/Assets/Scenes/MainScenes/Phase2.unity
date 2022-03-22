@@ -441,6 +441,7 @@ GameObject:
   m_Component:
   - component: {fileID: 553359350}
   - component: {fileID: 553359349}
+  - component: {fileID: 553359351}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -490,6 +491,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &553359351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553359348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7460a5aa70a711a48ac1ec5efc4110ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Hit
+    clip: {fileID: 8300000, guid: 31abc3930240f454b8e173c1e5a29ff1, type: 3}
+    volume: 0.75
+    pitch: 1
+    SpatialBlend: 0
+    MaxDistance: 0
+    loop: 0
+    source: {fileID: 0}
 --- !u!1 &630861255 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9076378140012291301, guid: 81df75eb5ad78e94a86f84c8e2652119, type: 3}
@@ -1146,9 +1168,9 @@ MonoBehaviour:
   deathPanLaziness: 25
   isMovingRandomly: 1
   isChasingPlayer: 0
-  cameraShake: {fileID: 1946561582}
+  cameraShake: {fileID: 1748954433}
   duration: 3
-  magnitude: 0.1
+  magnitude: 0.01
   modifier: 0.0002
 --- !u!114 &862751003
 MonoBehaviour:
@@ -2133,6 +2155,17 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1748954433 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6795974678078669408, guid: 6d7652feb2ce66f42977bae35c929572, type: 3}
+  m_PrefabInstance: {fileID: 187322971}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36a0b2c04a562ae48a523b275ae31294, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1940273420
 GameObject:
   m_ObjectHideFlags: 0

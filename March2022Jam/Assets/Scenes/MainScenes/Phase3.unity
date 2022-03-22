@@ -648,7 +648,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &587805650
 Transform:
   m_ObjectHideFlags: 0
@@ -2679,6 +2679,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3515115100378810160}
   - component: {fileID: 3515115100378810163}
+  - component: {fileID: 3515115100378810164}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -2713,6 +2714,27 @@ MonoBehaviour:
   Heart1Unfilled: {fileID: 112476710}
   Heart2Unfilled: {fileID: 987729276}
   Heart3Unfilled: {fileID: 475741177}
+--- !u!114 &3515115100378810164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3515115100378810162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7460a5aa70a711a48ac1ec5efc4110ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Hit
+    clip: {fileID: 8300000, guid: 31abc3930240f454b8e173c1e5a29ff1, type: 3}
+    volume: 0.75
+    pitch: 1
+    SpatialBlend: 0
+    MaxDistance: 0
+    loop: 0
+    source: {fileID: 0}
 --- !u!4 &4242954284726860760
 Transform:
   m_ObjectHideFlags: 0
