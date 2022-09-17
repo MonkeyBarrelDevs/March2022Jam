@@ -1696,7 +1696,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TrailName: 
-  m_CurrentTrailPreset: {fileID: 11400000, guid: 0d655f4f10ac9864fbb7b09750fbaee2, type: 2}
+  m_CurrentTrailPreset: {fileID: 11400000, guid: ac13e476cef46184f8bd766e70c08fbd, type: 2}
   m_TrailParent: {fileID: 0}
   m_SpriteToDuplicate: {fileID: 1270224474}
   m_Layer: 0
@@ -2294,7 +2294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TrailName: 
-  m_CurrentTrailPreset: {fileID: 11400000, guid: 0d655f4f10ac9864fbb7b09750fbaee2, type: 2}
+  m_CurrentTrailPreset: {fileID: 11400000, guid: ac13e476cef46184f8bd766e70c08fbd, type: 2}
   m_TrailParent: {fileID: 0}
   m_SpriteToDuplicate: {fileID: 1974166105}
   m_Layer: 0
